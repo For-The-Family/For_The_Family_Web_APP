@@ -30,6 +30,7 @@ FTF : For the Family (FF : Fyrir Fjölskylduna)
 
 * Gerið Wireflows (Wireframes + User flows) á pappír fyrir appið. Takið ljósmyndir af skissum.
 ![Screenshot 2024-10-24 103923][(https://github.com/user-attachments/assets/313f39e4-ca9f-4bab-a244-4f40825b3090](https://github.com/For-The-Family/For_The_Family_Web_APP/blob/main/drawing.svg))
+<img src="./drawing.svg">
 
 # Source Material ##
 * https://reykjavik.is/allir-leikskolar
