@@ -29,13 +29,11 @@ FTF : For the Family (FF : Fyrir Fjölskylduna)
 <h3> Hvernig er viðmótið á síðunni? </h3
 
 * Gerið Wireflows (Wireframes + User flows) á pappír fyrir appið. Takið ljósmyndir af skissum.
+* þurfum að breita.. myndinni í skissu stöffið.
 <img src="./drawing.svg">
 
 # Source Material ##
 * https://reykjavik.is/allir-leikskolar
 
 #Staflar:
- - HTML = Htmlx
- - JS = Django
- - CSS = Windtail
- - Database = SQL or firebase
+ Fyrir python munum við nota Django að því að ... ?, fyrir CSS munum við nota Windtail því það lúkkar einfalt og Database munum við nota SQL eða Firebase því ???.
