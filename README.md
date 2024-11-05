@@ -1,16 +1,6 @@
 # For_The_Family_Web_App
 FTF : For the Family (FF : Fyrir Fjölskylduna)
 
-# Developers
-* ## Css / front-end
-    ### Diljá
-* ## Javascript / front-end
-    ### Örn
-* ## Server & Data Management
-    ### Jón
-
-
-
 # Verkefni fyrir áfanga VEFÞ3VÞ05DU.
 
 * Almenn textalýsing á því hvað appið á að gera, hvað það á að leysa og fyrir hvern.
