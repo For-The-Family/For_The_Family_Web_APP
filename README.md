@@ -1,7 +1,4 @@
-# For_The_Family_Web_App, # Verkefni fyrir áfanga VEFÞ3VÞ05DU.
-FTF : For the Family (FF : Fyrir Fjölskylduna)
-
-
+<h1>For The Family</h1>
 # UserStories:
    Hver notar síðuna:
 - Foreldar sem langar að fara út á leikvelli/leikskóla/grunnskóla með börnin sín.
