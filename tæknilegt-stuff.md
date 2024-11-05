@@ -1,5 +1,13 @@
-
-
+# Functions ##
+* User rating Handled through minimal JS and Local storage, prevents multi voting and manipulation of data.
+* Users Can report a problem with Each Location, When a user opens a card to view the information of a location
+  at the bottom of the card is a button that says "Report a Problem" or in this case "Tilkynna Vandamál eða Breytingar"
+  provided that the users presses that button and completes the captcha, they will be able to Write a short description
+  or submit a picture showing the problem or changes that have affected the area.
+* Choose Simple, Advanced or GEO-Location for filtering ( simple & advanced OR kid friendly & Adult Friendly )
+  * Simple = 
+    * Filter by Neighborhood 
+    * Age 2+ | 4+ | 6+
 # Developers
 * ## Css / front-end
     ### Diljá
