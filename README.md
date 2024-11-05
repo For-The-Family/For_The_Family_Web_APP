@@ -38,4 +38,4 @@ FTF : For the Family (FF : Fyrir Fjölskylduna)
  - HTML = Htmlx
  - JS = Django
  - CSS = Windtail
- - Database = ? 
+ - Database = SQL or firebase
