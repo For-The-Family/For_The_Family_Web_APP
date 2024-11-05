@@ -28,11 +28,11 @@ FTF : For the Family (FF : Fyrir Fjölskylduna)
  * Veitinga staði sem bjóða uppá upplifun fyrir krakkana þeirra.
 <h3> Hvernig er viðmótið á síðunni? </h3
 
-# Source Material ##
-* https://reykjavik.is/allir-leikskolar
-
 * Gerið Wireflows (Wireframes + User flows) á pappír fyrir appið. Takið ljósmyndir af skissum.
 ![Screenshot 2024-10-24 103923](https://github.com/user-attachments/assets/313f39e4-ca9f-4bab-a244-4f40825b3090)
+
+# Source Material ##
+* https://reykjavik.is/allir-leikskolar
 
 #Staflar:
  - HTML = Htmlx
