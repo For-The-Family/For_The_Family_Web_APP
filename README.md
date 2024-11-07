@@ -24,9 +24,10 @@
 # Hvernig er viðmótið á síðunni?
 
    * Gerið Wireflows (Wireframes + User flows) á pappír fyrir appið. Takið ljósmyndir af skissum.
-   * þurfum að breita.. myndinni í skissu stöffið.
 
-<img src="./drawing.svg">
+<img src="./Images/Kindergarten_advanced.png">
+
+<img src="./Images/kindergarten_simple.png">
 
 # Source Material
  * https://reykjavik.is/allir-leikskolar
