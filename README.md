@@ -24,6 +24,7 @@
 # Hvernig er viðmótið á síðunni?
 
    * Gerið Wireflows (Wireframes + User flows) á pappír fyrir appið. Takið ljósmyndir af skissum.
+   * Due to how github handles images it places black spaces inbetween the "phones" making it a little harder to see the arrows.
 
 <img src="./Images/kindergarten_Advanced.png">
 
