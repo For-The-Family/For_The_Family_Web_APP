@@ -25,9 +25,9 @@
 
    * Gerið Wireflows (Wireframes + User flows) á pappír fyrir appið. Takið ljósmyndir af skissum.
 
-<img src="./Images/Kindergarten_advanced.png">
+<img src="./Images/kindergarten_Advanced.png">
 
-<img src="./Images/kindergarten_simple.png">
+<img src="./Images/kindergarten_Simple.png">
 
 # Source Material
  * https://reykjavik.is/allir-leikskolar
