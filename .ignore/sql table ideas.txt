@@ -1,0 +1,91 @@
+Based on your JSON structure, a normalized database design with multiple tables would be beneficial. This structure will reduce redundancy, improve query efficiency, and organize the data in a way that allows for efficient querying on specific aspects (e.g., location, activities, facilities).
+
+Here's a suggested schema with the tables and relationships for your kindergarten data:
+
+1. kindergartens (Main table for each kindergarten)
+    id (Primary Key, serial)
+    name (VARCHAR(255), unique identifier for each kindergarten)
+    street_address (VARCHAR(255))
+    city (VARCHAR(255))
+    postal_code (VARCHAR(10))
+    geo_location (POINT for latitude/longitude, if supported, or separate columns for latitude and longitude)
+    opening_hours (VARCHAR(50))
+    minimum_age (INT)
+    image_path (VARCHAR(255) for storing the path to the image)
+2. activities (Table for possible activities)
+    id (Primary Key, serial)
+    activity_name (VARCHAR(50), name of the activity)
+3. kindergarten_activities (Join table linking kindergartens with activities they offer)
+    kindergarten_id (Foreign Key referencing kindergartens.id)
+    activity_id (Foreign Key referencing activities.id)
+    is_available (BOOLEAN to indicate if an activity is available)
+4. facilities (Table for nearby facilities)
+    id (Primary Key, serial)
+    facility_name (VARCHAR(50), name of the facility)
+5. kindergarten_facilities (Join table linking kindergartens with nearby facilities)
+    kindergarten_id (Foreign Key referencing kindergartens.id)
+    facility_id (Foreign Key referencing facilities.id)
+    is_available (BOOLEAN to indicate if a facility is available)
+Example SQL Code
+This code will help set up the tables with the structure above:
+
+
+-- Main table for kindergartens
+CREATE TABLE kindergartens (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL,
+    street_address VARCHAR(255),
+    city VARCHAR(255),
+    postal_code VARCHAR(10),
+    latitude DECIMAL(8, 5),
+    longitude DECIMAL(8, 5),
+    opening_hours VARCHAR(50),
+    minimum_age INT,
+    image_path VARCHAR(255)
+);
+
+-- Table for activities
+CREATE TABLE activities (
+    id SERIAL PRIMARY KEY,
+    activity_name VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Join table for kindergarten activities
+CREATE TABLE kindergarten_activities (
+    kindergarten_id INT REFERENCES kindergartens(id) ON DELETE CASCADE,
+    activity_id INT REFERENCES activities(id) ON DELETE CASCADE,
+    is_available BOOLEAN NOT NULL,
+    PRIMARY KEY (kindergarten_id, activity_id)
+);
+
+-- Table for facilities
+CREATE TABLE facilities (
+    id SERIAL PRIMARY KEY,
+    facility_name VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- Join table for kindergarten facilities
+CREATE TABLE kindergarten_facilities (
+    kindergarten_id INT REFERENCES kindergartens(id) ON DELETE CASCADE,
+    facility_id INT REFERENCES facilities(id) ON DELETE CASCADE,
+    is_available BOOLEAN NOT NULL,
+    PRIMARY KEY (kindergarten_id, facility_id)
+);
+
+
+
+Populating Data and Querying
+    Inserting data: 
+        First, insert each unique activity and facility into 
+        the activities and facilities tables. Then, insert kindergartens 
+        into the kindergartens table. Finally, use the kindergarten_activities
+         and kindergarten_facilities tables to mark each activity or facility 
+         as available or not for each kindergarten.
+
+    Querying data:
+        To get a list of kindergartens with certain activities or facilities available, 
+        you can use JOIN queries on kindergarten_activities and kindergarten_facilities.
+        This structure allows efficient queries for specific attributes without 
+        loading unnecessary data, reducing server strain.
+
+This setup will help ensure data integrity, optimize storage, and facilitate targeted queries, making the database more responsive for users.

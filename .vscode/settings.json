@@ -1,0 +1,226 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_1",
+            "database": "Database_Theory_Project_1",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_2",
+            "database": "Database_Theory_Project_2",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_3",
+            "database": "Database_Theory_Project_3",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_4",
+            "database": "Database_Theory_Project_4",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_5",
+            "database": "Database_Theory_Project_5",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_6",
+            "database": "Database_Theory_Project_6",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_7",
+            "database": "Database_Theory_Project_7",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_8",
+            "database": "Database_Theory_Project_8",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_9",
+            "database": "Database_Theory_Project_9",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTP_10",
+            "database": "Database_Theory_Project_10",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_1",
+            "database": "Database_Theory_Inclass_Project_1",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_2",
+            "database": "Database_Theory_Inclass_Project_2",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_3",
+            "database": "Database_Theory_Inclass_Project_3",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_4",
+            "database": "Database_Theory_Inclass_Project_4",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_5",
+            "database": "Database_Theory_Inclass_Project_5",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_6",
+            "database": "Database_Theory_Inclass_Project_6",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_7",
+            "database": "Database_Theory_Inclass_Project_7",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_8",
+            "database": "Database_Theory_Inclass_Project_8",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_9",
+            "database": "Database_Theory_Inclass_Project_9",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "DTICP_10",
+            "database": "Database_Theory_Inclass_Project_10",
+            "username": "asmodeus_cruentus",
+            "group": "Server_V_3"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "FTF_SQL_Server",
+            "group": "FTF",
+            "database": "FTF_SQL",
+            "username": "asmodeus_cruentus",
+            "password": "KiwJwQ!1JFv9J8$#lWlR"
+        },
+        {
+            "previewLimit": 50,
+            "server": "153.92.134.127",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "FTF_SQL_website_reader",
+            "group": "FTF",
+            "database": "FTF_SQL",
+            "username": "website_reader",
+            "password": "Parlor-Ellipse-Grappling-Rival-Daylight-Backtalk7"
+        }
+    ]
+}
