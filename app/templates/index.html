@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}For the Family{% endblock %}</title>
+    <!-- Link to CSS stylesheet
+
+    Link to CSS stylesheet -->
+</head>
+    <!-- Header section -->
+    {% if show_header | default(true) %}
+        <header>
+            <div class="menu-container">
+                <menu class="menu">
+                    <li><a href="{{ url_for('kindergartens_bp.index') }}">Kindergartens</a></li>
+                    <li><a href="{{ url_for('front_page.home') }}">Home</a></li>
+                </menu>
+
+                <ul class="right-links">
+                </ul>
+            </div>
+        </header>
+    {% endif %}
+<body>
+
+    <!-- Main content area -->
+    <main>
+        {% block content %}
+        <!-- This block will be filled with page-specific content -->
+        {% endblock content %}
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
+</body>
+    <!-- Footer section -->
+    {% if show_footer | default(true) %}
+        <footer class="footer">
+            <menu>
+
+            </menu>
+            <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
+        </footer>
+    {% endif %}
+</html>

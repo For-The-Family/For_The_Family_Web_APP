@@ -1,0 +1,771 @@
+[
+	{
+        "Name": "Aðalþing",
+        "Location":
+            {
+                "Street": "Aðalþingi 2",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.08411,
+                        "Longitude": -21.81725
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/placeholder.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Arnarsmári",
+        "Location":
+            {
+                "Street": "Arnarsmári 34",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.09823,
+                        "Longitude": -21.89681
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/arnarsmari.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Austurkór",
+        "Location":
+            {
+                "Street": "Austurkór 1",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.08475,
+                        "Longitude": -21.83315
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/austurkor.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Álfaheiði",
+        "Location":
+            {
+                "Street": "Álfaheiði 46",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10958,
+                        "Longitude": -21.86831
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/alfaheidi.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Álfatún",
+        "Location":
+            {
+                "Street": "Álfatún 2",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11445,
+                        "Longitude": -21.86152
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/alfatun.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Baugur",
+        "Location":
+            {
+                "Street": "Baugakór 36",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.08764,
+                        "Longitude": -21.83056
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/baugur.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Dalur",
+        "Location":
+            {
+                "Street": "Funalind 4",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.09758,
+                        "Longitude": -21.87182
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/dalur.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Efstahjilli",
+        "Location":
+            {
+                "Street": "Efstahjalla 20",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11080,
+                        "Longitude": -21.86157
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/efstihjalli.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Fagrabrekka",
+        "Location":
+            {
+                "Street": "Fagrabrekka 26",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11238,
+                        "Longitude": -21.86873
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/fagrabrekka.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Fífusalir",
+        "Location":
+            {
+                "Street": "Salavegur 4",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.09408,
+                        "Longitude": -21.85767
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/fifusalir.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Furugrund",
+        "Location":
+            {
+                "Street": "Furugrund 1",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11529,
+                        "Longitude": -21.87890
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/furugrund.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Grænatún",
+        "Location":
+            {
+                "Street": "Grænatúni 3",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11490,
+                        "Longitude": -21.86639
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/graenatun.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Kópahvoll",
+        "Location":
+            {
+                "Street": "Bjarnhólastígur 26",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11131,
+                        "Longitude": -21.88369
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/kopahvoll.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Kópasteinn",
+        "Location":
+            {
+                "Street": "Hábraut 5",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11311,
+                        "Longitude": -21.91075
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/kopasteinn.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Kór - Heilsuleikskóli",
+        "Location":
+            {
+                "Street": "Baugakór 25",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.08561,
+                        "Longitude": -21.82450
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/placeholder.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Lækur",
+        "Location":
+            {
+                "Street": "Dalsmári 21-25",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10514,
+                        "Longitude": -21.88649
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/laekur.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Marbakki",
+        "Location":
+            {
+                "Street": "Marbakkabraut 4",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.11591,
+                        "Longitude": -21.90597
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/placeholder.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Álfaheiði",
+        "Location":
+            {
+                "Street": "Álfaheiði 46",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10958,
+                        "Longitude": -21.86831
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/alfaheidi.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Núpur",
+        "Location":
+            {
+                "Street": "Núpalind 3",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10958,
+                        "Longitude": -21.86831
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/nupur.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Rjúpnahæð",
+        "Location":
+            {
+                "Street": "Rjúpnasalir 3",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.09086,
+                        "Longitude": -21.84119
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/rjupnahaed.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Álfaheiði",
+        "Location":
+            {
+                "Street": "Álfaheiði 46",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10958,
+                        "Longitude": -21.86831
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/alfaheidi.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Sólhvörf",
+        "Location":
+            {
+                "Street": "Álfkonuhvarf 17",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10958,
+                        "Longitude": -21.86831
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/solhvorf.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Urðarhóll - Heilsuleikskóli",
+        "Location":
+            {
+                "Street": "Kópavogsbraut 19",
+                "City": "Kópavogur",
+                "PostalCode": 203,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.10892,
+                        "Longitude": -21.91661
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/urdarholl.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    },{
+        "Name": "Lækjarbotn - Waldorfleikskóli",
+        "Location":
+            {
+                "Street": "Lækjarbotnland 53",
+                "City": "Kópavogur",
+                "PostalCode": 206,
+                "GeoLocation":
+                    {
+                        "Latitude": 64.07013,
+                        "Longitude": -21.65915
+                    }
+            },
+        "OpeningHours": "07:45 - 16:30",
+        "MinimumAge": 0,
+        "Image": "../Images/kopavogur/solhvorf.jpg",
+        "AvailableActivities": {
+            "Infant-Swings" : true,
+            "Tire-Swings" : true,
+            "Ballance-Swings" : true,
+            "Big-Basket-Swings" : true,
+            "Slide": true,
+            "Sandbox": true,
+            "Climbing-Frame" : true,
+            "Castle" : true,
+            "Painted-Road" : false
+        },
+        "NearbyFacilities": {
+            "Parking" : true,
+            "Toilets" : true,
+            "Food & Drinks" : true
+        }
+    }
+]

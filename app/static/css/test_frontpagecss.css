@@ -1,0 +1,31 @@
+body {
+    background-color: #f0eeeb;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.offside-regular {
+  }
+  
+h1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+
+}
+
+button {
+    color: #e8edf1;
+    border-radius: 20cm;
+    width: 100%;
+    height: aouto;
+    border-radius: 3cm;
+    place-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 4px 2px;
+    display: inline-block;
+    padding: 15px 32px;
+}

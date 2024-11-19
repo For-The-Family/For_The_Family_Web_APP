@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}For the Family{% endblock %}</title>
+    <!-- Link to CSS stylesheet
+
+    Link to CSS stylesheet -->
+    <link rel="stylesheet" href="{{url_for('static',filename='base.css')}}">
+</head>
+    <!-- Header section -->
+    {% if show_header | default(true) %}
+        <header>
+            <div class="menu-container">
+                <menu class="menu">
+                    <li><a href="{{ url_for('index') }}">{{ labels.index }}</a></li>
+                    <li><a href="{{ url_for('kindergartens') }}">{{ labels.kindergartens }}</a></li>
+                    <li><a href="{{ url_for('restraunts') }}">{{ labels.restraunts }}</a></li>
+                    <li><a href="{{ url_for('gradeschools') }}">{{ labels.gradeschools }}</a></li>
+                    <li><a href="{{ url_for('playgrounds') }}">{{ labels.playgrounds }}</a></li>
+                </menu>
+
+                <ul class="right-links">
+                    <li><a href="{{ url_for('data_userview') }}">{{ labels.data_userview }}</a></li>
+                    <li><a href="{{ url_for('gametable') }}">{{ labels.gametable }}</a></li>
+                    <li><a href="{{ url_for('gamearticles') }}">{{ labels.gamearticles }}</a></li>
+                </ul>
+            </div>
+        </header>
+    {% endif %}
+<body>
+
+    <!-- Main content area -->
+    <main>
+        {% block content %}
+        <!-- This block will be filled with page-specific content -->
+        {% endblock content %}
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
+</body>
+    <!-- Footer section -->
+    {% if show_footer | default(true) %}
+        <footer class="footer">
+            <link rel="stylesheet" href="{{url_for('static',filename='footer.css')}}">
+            <menu>
+
+            </menu>
+            <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
+        </footer>
+    {% endif %}
+</html>

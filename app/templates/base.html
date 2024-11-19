@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    {% if show_header | default(true) %}  <!-- Include a separate header file -->
+    
+    {% endif %}
+    <main>
+        {% if show_body | default(true) %}
+        <!-- Default content -->
+        <p>Welcome to my Flask App!</p>
+        {% endif %}
+    </main>
+    
+    {% if show_footer | default(true) %}  <!-- Include a separate footer file -->
+</body>
+</html>

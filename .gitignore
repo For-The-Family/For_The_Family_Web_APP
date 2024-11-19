@@ -1,0 +1,10 @@
+# .Gitignore files
+.venv/
+.env/
+.vscode/
+.ignore/
+blueprints/gradeschools/
+blueprints/playgrounds/
+blueprints/restaurants/
+For_The_Family_Web_APP-Development-Dilja/
+For_The_Family_Web_APP-Development-Orn/
