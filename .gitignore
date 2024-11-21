@@ -9,7 +9,8 @@ blueprints/playgrounds/
 blueprints/restaurants/
 For_The_Family_Web_APP-Development-Dilja/
 For_The_Family_Web_APP-Development-Orn/
-
+**/__pycache__/
 # Files to ignore
 .env
 For_The_Family_Web_APP.code-workspace
+*.pyc
