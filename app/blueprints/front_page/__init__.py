@@ -4,7 +4,9 @@ from flask import Blueprint
 
 # Initialize the blueprint
 front_page_bp = Blueprint(
-    'front_page', __name__
+    'front_page', __name__,
+    template_folder='../../templates',  # Adjust path if needed
+    static_folder='static'
 )
 
 # Import routes (make sure routes.py exists)
