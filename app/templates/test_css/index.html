@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: rgb(238, 207, 164);">
 
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,17 +13,34 @@
 
         <title>Who Would Read This?, I would read this!</title>
         <script src="testAPP.js" defer></script>
-        <link rel="stylesheet" href="testCSS.css">
+        <!--windtail-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!--HTMLX-->
+        <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+        <!--CSS file so far dont need it-->
+        <!--<link rel="stylesheet" href="/test_frontpagecss.css.css">-->
     </head>
     <header>
-        <div class="menu-container">
-            <menu class="menu">
-                <li><a href="{{ url_for('front_page.home') }}">Home</a></li>
-                <li><a href="{{ url_for('kindergartens_bp.index') }}">Kindergartens</a></li>
-                <li><a href="{{ url_for('test_js.index') }}">Java Script Testing</a></li>
-                <li><a href="{{ url_for('test_css.index') }}">CSS Testing</a></li>
-            </menu>
-
+        <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
+        
+        <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
+            
+            <!--Vantar að láta route I run.py og rétta hx-get: -->
+            <button
+                class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
+                hx-get="{{ url_for('kindergartens_bp.index') }}" 
+                hx.target="#response-container"
+                gx-swap="innerHTML">
+                Leiksvæði
+            </button>
+            <!--Vantar að láta route I run.py og rétta hx-get: -->
+            <button
+                class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
+                hx-get="/veitingar"
+                hx.target="#response-container"
+                gx-swap="innerHTML">
+                veitingastaðir
+            </button>
             <ul class="right-links">
             </ul>
         </div>
@@ -41,4 +58,14 @@
         <div id="map" class="map-container hidden"></div>
 
     </body>
+    <footer>
+        <h6>Verkefni eftir : Diljá, Jón & Örn.</h6>
+    </footer>
+    <!--        
+    <footer class="menu">
+        <li><a href="{{ url_for('front_page.home') }}">Home</a></li>
+        <li><a href="{{ url_for('kindergartens_bp.index') }}">Kindergartens</a></li>
+        <li><a href="{{ url_for('test_js.index') }}">Java Script Testing</a></li>
+        <li><a href="{{ url_for('test_css.index') }}">CSS Testing</a></li>
+    </footer> -->
 </html>
