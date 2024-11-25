@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}For the Family{% endblock %}</title>
+    <title>{% block title %}SQL test{% endblock %}</title>
     <!-- Link to CSS stylesheet
-
     Link to CSS stylesheet -->
+    <script>
+        function searchDatabase(query) {
+            if (query.length === 0) {
+                document.getElementById("results").innerHTML = "";
+                return;
+            }
+
+            fetch(`/search?q=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    let resultHTML = '';
+                    data.forEach(item => {
+                        resultHTML += `<p>${item.name}</p>`;
+                    });
+                    document.getElementById("results").innerHTML = resultHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
 </head>
     <!-- Header section -->
     {% if show_header | default(true) %}
@@ -24,48 +42,11 @@
             </div>
         </header>
     {% endif %}
-<body>
-
-    <!-- Main content area -->
-    <main>
-        {% block content %}
-        <!-- This block will be filled with page-specific content -->
-         <!-- HTML for the search bar -->
-        <input type="text" id="searchBar" placeholder="Search..." onkeyup="searchDatabase(this.value)">
-
-        <!-- JavaScript for AJAX request -->
-        <script>
-        function searchDatabase(query) {
-            if (query.length === 0) {
-                // Clear results if query is empty
-                document.getElementById("results").innerHTML = "";
-                return;
-            }
-
-            // Create an AJAX request
-            fetch(`/search?q=${query}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Display results
-                    let resultHTML = '';
-                    data.forEach(item => {
-                        resultHTML += `<p>${item.name}</p>`;
-                    });
-                    document.getElementById("results").innerHTML = resultHTML;
-                })
-                .catch(error => console.error('Error:', error));
-        }
-        </script>
-
-        <!-- Container for search results -->
+    <body>
+        <h1>Search</h1>
+        <input type="text" id="searchBar" placeholder="Type here..." onkeyup="searchDatabase(this.value)">
         <div id="results"></div>
-        {% endblock content %}
-    </main>
-
-
-    <!-- Optional JavaScript -->
-    <!-- Optional JavaScript -->
-</body>
+    </body>
     <!-- Footer section -->
     {% if show_footer | default(true) %}
         <footer class="footer">

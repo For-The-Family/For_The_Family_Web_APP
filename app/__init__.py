@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import pyrebase
 
+
 from .blueprints.front_page.routes import front_page_bp
 from .blueprints.test_js.routes import test_js_bp
 from .blueprints.test_css.routes import test_css_bp
