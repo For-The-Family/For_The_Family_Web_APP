@@ -20,12 +20,13 @@
         <!--CSS file so far dont need it-->
         <!--<link rel="stylesheet" href="/test_frontpagecss.css.css">-->
     </head>
+    
     <header>
         <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
         
         <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
             
-            <!--Vantar að láta route I run.py og rétta hx-get: -->
+            <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
             <button
                 class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
                 hx-get="{{ url_for('kindergartens_bp.index') }}" 
@@ -33,7 +34,7 @@
                 gx-swap="innerHTML">
                 Leiksvæði
             </button>
-            <!--Vantar að láta route I run.py og rétta hx-get: -->
+            <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
             <button
                 class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
                 hx-get="/veitingar"
@@ -58,7 +59,7 @@
         <div id="map" class="map-container hidden"></div>
 
     </body>
-    <footer>
+    <footer class="grid-cols-1 ml-5" >
         <h6>Verkefni eftir : Diljá, Jón & Örn.</h6>
     </footer>
     <!--        
