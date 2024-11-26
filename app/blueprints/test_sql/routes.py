@@ -1,15 +1,10 @@
-# Imports
-from flask import Blueprint, request, jsonify, render_template, redirect, url_for
-import psycopg
+from flask import Blueprint, request, jsonify, render_template
+import psycopg  # Ensure psycopg library is installed
 
 from . import test_sql_bp
 
-# Route for java script testing
-@test_sql_bp.route('/')
-def index():
-    return render_template('test_sql/index.html')
-
-#zeh connecty boyyyy
+# Connection Function
+# zeh connecty boyyyy
 def get_db_connection():
     conn = psycopg.connect(
         dbname='FTF_SQL',
@@ -20,20 +15,73 @@ def get_db_connection():
     )
     return conn
 
+# Route to render the index page
+@test_sql_bp.route('/')
+def index():
+    return render_template('test_sql/index.html')
 
-#thingy thingy to search, attempt 4782
-@test_sql_bp.route('/search', methods=['GET'])
+# Route to handle search queries
+@test_sql_bp.route('test_sql/search', methods=['GET'])
 def search():
-    query = request.args.get('q', '')
+    pattern = request.args.get('q', '')
+    query = """SELECT id, name, city, street_address, opening_hours 
+               FROM kindergartens 
+               WHERE name ILIKE %s OR city ILIKE %s OR street_address ILIKE %s"""
+    try:
+        # Connect to the database
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(query, (f"%{pattern}%", f"%{pattern}%", f"%{pattern}%"))
+                results = cur.fetchall()
+                # Format the results into a list of dictionaries
+                response = [
+                    {
+                        "id": row[0],
+                        "name": row[1],
+                        "city": row[2],
+                        "street_address": row[3],
+                        "opening_hours": row[4]
+                    }
+                    for row in results
+                ]
+        return jsonify(response)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
-    #sql query specifically
-    sql_query = "SELECT name FROM kindergartens WHERE name ILIKE %s LIMIT 10"
-    pattern = f"%{query}%"
-
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    cursor.execute(sql_query, (pattern,))
-    result = cursor.fetchall()
-    conn.close()
-
-    return jsonify([{"name": row[0]} for row in results])
+# Route to fetch details of a specific kindergarten
+@test_sql_bp.route('test_sql/<int:kindergarten_id>', methods=['GET'])
+def kindergarten_details(kindergarten_id):
+    query = """SELECT k.name, k.city, k.street_address, k.postal_code, 
+                      k.opening_hours, k.minimum_age, k.image_path,
+                      ARRAY_AGG(DISTINCT a.activity_name) AS activities,
+                      ARRAY_AGG(DISTINCT f.facility_name) AS facilities
+               FROM kindergartens k
+               LEFT JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
+               LEFT JOIN activities a ON ka.activity_id = a.id
+               LEFT JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
+               LEFT JOIN facilities f ON kf.facility_id = f.id
+               WHERE k.id = %s
+               GROUP BY k.id"""
+    try:
+        # Connect to the database
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(query, (kindergarten_id,))
+                row = cur.fetchone()
+                if row:
+                    response = {
+                        "name": row[0],
+                        "city": row[1],
+                        "street_address": row[2],
+                        "postal_code": row[3],
+                        "opening_hours": row[4],
+                        "minimum_age": row[5],
+                        "image_path": row[6],
+                        "activities": row[7],
+                        "facilities": row[8]
+                    }
+                    return jsonify(response)
+                else:
+                    return jsonify({"error": "Kindergarten not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

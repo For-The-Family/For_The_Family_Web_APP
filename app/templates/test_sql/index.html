@@ -3,57 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SQL test{% endblock %}</title>
-    <!-- Link to CSS stylesheet
-    Link to CSS stylesheet -->
+    <title>Kindergarten Search</title>
     <script>
         function searchDatabase(query) {
-            if (query.length === 0) {
+            if (!query.trim()) {
                 document.getElementById("results").innerHTML = "";
                 return;
             }
-
-            fetch(`/search?q=${query}`)
+            fetch(`test_sql/search?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
-                    let resultHTML = '';
-                    data.forEach(item => {
-                        resultHTML += `<p>${item.name}</p>`;
-                    });
+                    const resultHTML = data.map(item => `
+                        <div class="result-item" onclick="showDetails(${item.id})">
+                            <p><strong>${item.name}</strong></p>
+                            <p>${item.street_address}, ${item.city}</p>
+                            <p>Open: ${item.opening_hours}</p>
+                        </div><hr>`).join('');
                     document.getElementById("results").innerHTML = resultHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function showDetails(kindergartenId) {
+            fetch(`test_sql/${kindergartenId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const detailsHTML = `
+                        <h2>${data.name}</h2>
+                        <p>City: ${data.city}</p>
+                        <p>Address: ${data.street_address}, ${data.postal_code}</p>
+                        <p>Opening Hours: ${data.opening_hours}</p>
+                        <p>Minimum Age: ${data.minimum_age}</p>
+                        <ul><strong>Activities:</strong>
+                            ${data.activities.map(a => `<li>${a}</li>`).join('')}
+                        </ul>
+                        <ul><strong>Facilities:</strong>
+                            ${data.facilities.map(f => `<li>${f}</li>`).join('')}
+                        </ul>`;
+                    document.getElementById("results").innerHTML = detailsHTML;
                 })
                 .catch(error => console.error('Error:', error));
         }
     </script>
 </head>
-    <!-- Header section -->
-    {% if show_header | default(true) %}
-        <header>
-            <div class="menu-container">
-                <menu class="menu">
-                    <li><a href="{{ url_for('front_page.home') }}">Home</a></li>
-                    <li><a href="{{ url_for('kindergartens_bp.index') }}">Kindergartens</a></li>
-                    <li><a href="{{ url_for('test_js.index') }}">Java Script Testing</a></li>
-                    <li><a href="{{ url_for('test_css.index') }}">CSS Testing</a></li>
-                </menu>
-
-                <ul class="right-links">
-                </ul>
-            </div>
-        </header>
-    {% endif %}
-    <body>
-        <h1>Search</h1>
-        <input type="text" id="searchBar" placeholder="Type here..." onkeyup="searchDatabase(this.value)">
-        <div id="results"></div>
-    </body>
-    <!-- Footer section -->
-    {% if show_footer | default(true) %}
-        <footer class="footer">
-            <menu>
-
-            </menu>
-            <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
-        </footer>
-    {% endif %}
+<body>
+    <h1>Kindergarten Search</h1>
+    <input type="text" placeholder="Search..." onkeyup="searchDatabase(this.value)">
+    <div id="results"></div>
+</body>
 </html>
