@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kindergartens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradeschools</title>
     <script src="https://unpkg.com/htmx.org@1.8.4"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <header>
     <div class="grid bg-pink-500 rounded-full grid-cols-3 gap-50 w-99 my-10 mx-3">
         <!--Vantar route fyrir að fara á rétta síðu svo-->
-        <button class="bg-purple-500 hover:bg-purple-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
-            hx-get=""
-            hx.target=""
-            hx-swap="">
-            Leikskólar
-        </button>
-        <!--Vantar route fyrir að fara á rétta síðu svo-->
-        <button class="bg-yellow-500 hover:bg-yellow-700 text-white text-1xl font-bold py-10 px-9 rounded-full shadow-2xl"
+        <button class="bg-yellow-500 hover:bg-yellow-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
         hx-get=""
         hx.target=""
         hx-swap="">
             Grunnskólar
+        </button>
+        <!--Vantar route fyrir að fara á rétta síðu svo-->
+        <button class="bg-purple-500 hover:bg-purple-700 text-white text-1xl font-bold py-10 px-9 rounded-full shadow-2xl"
+            hx-get=""
+            hx.target=""
+            hx-swap="">
+
+            Leikskólar
         </button>
         <!--Vantar route fyrir að fara á rétta síðu svo-->
         <button class="bg-orange-500 hover:bg-orange-700 text-white text-1xl font-bold py-10 px-9 rounded-full shadow-2xl"
@@ -34,8 +36,8 @@
 </header>
 <body>
     <main id="content-body" class="p-6 text-center">
-        <!--Hér kemur JS fyrir úti Leikskóla sem sýnir alla Leikskóla-->
-        <p class="text-gray-500">Hér kemur JS fyrir úti Leikskóla
+        <!--Hér kemur JS fyrir úti Grunnskólar sem sýnir alla Grunnskóla-->
+        <p class="text-gray-500">Hér kemur JS fyrir úti Grunnskólar
         </p>
     </main>
 </body>
