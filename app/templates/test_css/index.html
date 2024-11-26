@@ -28,7 +28,7 @@
             
             <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
             <button
-                class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
+                class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
                 hx-get="{{ url_for('kindergartens_bp.index') }}" 
                 hx.target="#response-container"
                 gx-swap="innerHTML">
@@ -36,7 +36,7 @@
             </button>
             <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
             <button
-                class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
+                class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
                 hx-get="/veitingar"
                 hx.target="#response-container"
                 gx-swap="innerHTML">
