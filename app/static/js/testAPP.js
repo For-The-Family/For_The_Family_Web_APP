@@ -1,13 +1,81 @@
-const modal = document.getElementById("item-modal");
+const vmodal = document.getElementById("item-modal");
 const overlay = document.getElementById("overlay");
 const root = document.getElementById("root");
+const modal = document.querySelector("#modal");
+const openModal = document.querySelector(".open-button");
+const closeModal = document.querySelector(".close-button");
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+
 
 let activitiesCheckboxes = [];
 let CitiesCheckboxes = [];
 let userCoordinates = null;
 
+
+
+
+const icelandicOrder = [
+    'A', 'Á', 'B', 'D', 'Ð', 'E', 'É', 'F', 'G', 'H', 'I', 'Í', 'J', 'K', 'L', 'M', 'N', 'O', 'Ó', 
+    'P', 'R', 'S', 'T', 'U', 'Ú', 'V', 'X', 'Y', 'Ý', 'Þ', 'Æ', 'Ö'
+];
+
+
 sortingAB = true;
 sortingGIO = false;
+
+const getIndex = (char) => {
+    const upperChar = char.toUpperCase();
+    return icelandicOrder.indexOf(upperChar) !== -1 ? icelandicOrder.indexOf(upperChar) : 100;
+};
+
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+
+// This was the only way i could get the sorting to work i tryed 2 diffriend sorting systems one just did not work the other sorted right BUT Æ was just first 
+const customSortAB = (a, b) => {
+    let i = 0;
+    while (i < a.Name.length && i < b.Name.length) {
+        const aIndex = getIndex(a.Name[i]);
+        const bIndex = getIndex(b.Name[i]);
+        
+        if (aIndex !== bIndex) {
+            return aIndex - bIndex;
+        }
+        i++;
+    }
+    return a.Name.length - b.Name.length;
+};
+
+
+openModal.addEventListener('click', () => { 
+    if (modal && typeof modal.showModal === 'function') {
+        modal.showModal();
+    } else {
+        console.error('Modal element does not support showModal method');
+    }
+});
+
+closeModal.addEventListener('click', () => {
+    if (modal && typeof modal.close === 'function') {
+        modal.close();
+    } else {
+        console.error('Modal element does not support close method');
+    }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     createButtons();
@@ -20,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const getItems = async () => {
     try {
-        const response = await fetch('data/data.json');
+        const response = await fetch('../../static/data/kindergarten_rvk.json');
         const data = await response.json();
         return data;
     } catch (error) {
@@ -45,7 +113,6 @@ function createButtons() {
         sortingGIO = true;
         sortingAB = false;
         getUserLocation()
-        console.log("test GP")
         updateDisplay();
     });
 
@@ -62,6 +129,8 @@ async function createCityCheckboxes() {
         return acc;
     }, []);
 
+    const cityContainer = document.getElementById("city-filters");
+
     Cities.forEach(city => {
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -72,9 +141,9 @@ async function createCityCheckboxes() {
         label.htmlFor = city;
         label.innerText = city;
 
-        root.appendChild(checkbox);
-        root.appendChild(label);
-        root.appendChild(document.createElement("br"));
+        cityContainer.appendChild(checkbox);
+        cityContainer.appendChild(label);
+        cityContainer.appendChild(document.createElement("br"));
 
         CitiesCheckboxes.push(checkbox);
 
@@ -93,6 +162,8 @@ async function createActivityCheckboxes() {
         return acc;
     }, []);
 
+    const activityContainer = document.getElementById("activity-filters");
+
     activities.forEach(activity => {
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -103,9 +174,9 @@ async function createActivityCheckboxes() {
         label.htmlFor = activity;
         label.innerText = activity;
 
-        root.appendChild(checkbox);
-        root.appendChild(label);
-        root.appendChild(document.createElement("br"));
+        activityContainer.appendChild(checkbox);
+        activityContainer.appendChild(label);
+        activityContainer.appendChild(document.createElement("br"));
 
         activitiesCheckboxes.push(checkbox);
 
@@ -124,6 +195,8 @@ async function createNearbyFacilitiesCheckboxes() {
         return acc;
     }, []);
 
+    const facilityContainer = document.getElementById("facility-filters");
+
     facilities.forEach(facility => {
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -134,9 +207,9 @@ async function createNearbyFacilitiesCheckboxes() {
         label.htmlFor = facility;
         label.innerText = facility;
 
-        root.appendChild(checkbox);
-        root.appendChild(label);
-        root.appendChild(document.createElement("br"));
+        facilityContainer.appendChild(checkbox);
+        facilityContainer.appendChild(label);
+        facilityContainer.appendChild(document.createElement("br"));
 
         facilitiesCheckboxes.push(checkbox);
 
@@ -165,7 +238,8 @@ const updateDisplay = async () => {
 
         let sortedItems = items;
         if (sortingAB) {
-            sortedItems = sortedItems.sort((a, b) => a.Name.localeCompare(b.Name));
+            const sortedItems = items.sort(customSortAB);
+            console.log(sortedItems);
         } else if (sortingGIO && userCoordinates) {
             console.log("START SORTING GIO")
             sortedItems = sortedItems.filter(item => item.Location && item.Location.GeoLocation)
@@ -206,6 +280,10 @@ const getUserLocation = () => {
             },
         );
     }
+    else {sortingAB = true
+        sortingGIO = false
+        updateDisplay();
+    }
 };
 
 const getDistanceFromUser = (targetCoordinates) => {
@@ -241,6 +319,7 @@ const getDistanceFromUser = (targetCoordinates) => {
     console.log(`Distance from user to target: ${distance} km`);
     return distance;
 };
+
 
 
 (async () => {
