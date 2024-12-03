@@ -12,8 +12,8 @@
         crossorigin=""/>
 
         <title>Who Would Read This?, I would read this!</title>
-        <script src="testAPP.js" defer></script>
-        <link rel="stylesheet" href="testCSS.css">
+        <script src="../../static/js/testAPP.js" defer></script>
+        <link rel="stylesheet" href="../../static/css/testCSS.css">
     </head>
     <header>
         <div class="menu-container">
@@ -31,14 +31,43 @@
 
     <body>    
         <div id="root">
+            <button class="button open-button"></button>
+            <dialog open class="modal" id="modal">
+                <h2>
+                    Leiksvæði og veitingastaðir
+                   </h2>
+                   <h3>Findu það sem þig vantar..</h3>
+                   <h3>Núna!</h3>
+                   <p>Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                    eina sem þú gerir á okkar síðu
+                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.</p>
+            
+                    <p>Fyrir fram þakkir ♡ </p>
+            
+                    <button class="button close-button">OK</button>
+                </dialog>
             <div id="content"></div>
             <p id="message"></p>
             <p id="loading"></p>
         </div>
 
         <div id="overlay" class="overlay hidden"></div>
-        <section id="item-modal" class="modal hidden"></section>
+        <section id="item-modal"></section>
         <div id="map" class="map-container hidden"></div>
 
+
+        
     </body>
+    <div id="root">
+        <button type="button" class="collapsible">City Filters</button>
+        <div class="content-col" id="city-filters"></div>
+    
+        <button type="button" class="collapsible">Activity Filters</button>
+        <div class="content-col" id="activity-filters"></div>
+    
+        <button type="button" class="collapsible">Facility Filters</button>
+        <div class="content-col" id="facility-filters"></div>
+    </div>
+
 </html>

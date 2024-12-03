@@ -6,7 +6,7 @@ from flask import Blueprint
 test_js_bp = Blueprint(
     'test_js', __name__,
     template_folder='../templates',  # Adjust path if needed
-    static_folder='static'
+    static_folder='../../static'
 )
 
 # Import routes (make sure routes.py exists)

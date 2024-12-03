@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindergarten Search</title>
+    <script>
+        function searchDatabase(query) {
+            if (!query.trim()) {
+                document.getElementById("results").innerHTML = "";
+                return;
+            }
+            fetch(`test_sql/search?q=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultHTML = data.map(item => `
+                        <div class="result-item" onclick="showDetails(${item.id})">
+                            <p><strong>${item.name}</strong></p>
+                            <p>${item.street_address}, ${item.city}</p>
+                            <p>Open: ${item.opening_hours}</p>
+                        </div><hr>`).join('');
+                    document.getElementById("results").innerHTML = resultHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function showDetails(kindergartenId) {
+            fetch(`test_sql/${kindergartenId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const detailsHTML = `
+                        <h2>${data.name}</h2>
+                        <p>City: ${data.city}</p>
+                        <p>Address: ${data.street_address}, ${data.postal_code}</p>
+                        <p>Opening Hours: ${data.opening_hours}</p>
+                        <p>Minimum Age: ${data.minimum_age}</p>
+                        <ul><strong>Activities:</strong>
+                            ${data.activities.map(a => `<li>${a}</li>`).join('')}
+                        </ul>
+                        <ul><strong>Facilities:</strong>
+                            ${data.facilities.map(f => `<li>${f}</li>`).join('')}
+                        </ul>`;
+                    document.getElementById("results").innerHTML = detailsHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Kindergarten Search</h1>
+    <input type="text" placeholder="Search..." onkeyup="searchDatabase(this.value)">
+    <div id="results"></div>
+</body>
+</html>

@@ -9,5 +9,5 @@ front_page_bp = Blueprint(
     static_folder='static'
 )
 
-# Import routes (make sure routes.py exists)
+# Import routes
 from . import routes
