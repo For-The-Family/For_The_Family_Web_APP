@@ -14,7 +14,7 @@
         <title>Who Would Read This?, I would read this!</title>
         <!--<script src="testAPP.js" defer></script>-->
         <!--windtail-->
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="app/templates/aindex.html"></script>
         <!--HTMLX-->
         <script src="https://unpkg.com/htmx.org@1.8.4"></script>
         <!--CSS file so far dont need it-->
@@ -29,7 +29,7 @@
                 <!--Vantar að láta route I run.py og rétta hx-get: -->
                 <button
                     class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
-                    hx-get="/playareas/Kindergartens" 
+                    hx-get="app/templates/aindex.html" 
                     hx.target="#responce-content"
                     hx-swap="innerHTML">
                     Leiksvæði
