@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veitingarstaðir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org"></script>
+
+</head>
+<body class="p-6 bg-gray-200">
+    <!-- Header-->
+    <header id="button-container" class="mt-6 grid grid-cols-1 gap-4">
+        <!-- Vantar kóða til að fara til baka á heima síðuna -->
+        <button
+            class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-4 px-6 rounded-full w-full"
+            hx-get="/forsida"
+            hx-target="#main-container"
+            hx-swap="innerHTML">
+            AFTUR Á FORSÍÐU
+        </button>
+    </header>    
+    <div class="grid-cols-1 font-bold text-3xl text-center py-10">
+        <h1> 
+            Vefsíða en í vinnslu...
+        </h1>
+    </div>
+</body>
+</html>
