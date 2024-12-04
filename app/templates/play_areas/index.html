@@ -7,11 +7,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-gray-300">
+    <nav class="grid rounded-full grid-cols-2 gap-50 w-99 my-10 mx-3">
+        <button class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-3 rounded-full  shadow-2xl"
+            hx-get=""
+            hx-target="#content-body"
+            hx-swap="innerHTML">
+            HomePage
+        </button>
+        <button class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-3 rounded-full  shadow-2xl"
+            hx-get=""
+            hx-target="#content-body"
+            hx-swap="innerHTML">
+            veitingastaðir
+        </button>
+    </nav>
     
+    <header>
+        <div class="grid rounded-full grid-cols-3 gap-50 w-99 my-10 mx-3">
+            <!--Vantar route fyrir að sínir rétta data-->
+            <button class="bg-orange-500 hover:bg-orange-700 text-white text-2xl font-bold py-10 px-9 rounded-full  shadow-2xl"
+            hx-get=""
+            hx-target="#content-body"
+            hx-swap="innerHTML">
+                Leiksvæði
+            </button>
+            <!--Vantar route fyrir að sínir rétta data-->
+            <button class="bg-purple-500 hover:bg-purple-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                hx-get=""
+                hx-target="#content-body"
+                hx-swap="innerHTML">
+                Leikskólar
+            </button>
+            <!--Vantar route fyrir að sínir rétta data-->
+            <button class="bg-yellow-500 hover:bg-yellow-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+            hx-get=""
+            hx-target="#content-body"
+            hx-swap="innerHTML">
+                Grunnskólar
+            </button>
+    </header>
 
-
-    <h1>Welcome to the Kindergartens Page- click here to go <a href="{{ url_for('kindergartens.kindergartens_home') }}">Home</a></h1>
+    <main id="content-body" class="p-6 text-center">
+        <!-- Hér á að vera div með alla listann yfir öll svæði, þegar klikkað er á catagory í header þá á divið að breytast í þann flokk og ekki sýna annað svo kemur filter þar undir til að flokka þann lista-->
+        <!--Hér kemur JS fyrir úti leiksvæði sem sýnir öll Leiksvæði-->
+        <p class="text-gray-500">Hér kemur JS fyrir úti leiksvæði
+        </p>
+    </main>  
 </body>
 
 </html>

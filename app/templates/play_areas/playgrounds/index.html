@@ -8,32 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-    <header>
-        <div class="grid rounded-full grid-cols-3 gap-50 w-99 my-10 mx-3">
-            <!--Vantar route fyrir að sínir rétta data-->
-            <button class="bg-orange-500 hover:bg-orange-700 text-white text-2xl font-bold py-10 px-9 rounded-full  shadow-2xl"
-            hx-get="app/templates/play_areas/playgrounds/index.html"
-            hx-target="#content-body"
-            hx-swap="innerHTML">
-                Leiksvæði
-            </button>
-            <!--Vantar route fyrir að sínir rétta data-->
-            <button class="bg-purple-500 hover:bg-purple-700 text-white text-1xl font-bold py-10 px-9 rounded-full shadow-2xl"
-                hx-get="app/templates/play_areas/kindergartens/index.html"
-                hx-target="#content-body"
-                hx-swap="innerHTML">
-                Leikskólar
-            </button>
-            <!--Vantar route fyrir að sínir rétta data-->
-            <button class="bg-yellow-500 hover:bg-yellow-700 text-white text-1xl font-bold py-10 px-9 rounded-full shadow-2xl"
-            hx-get="app/templates/play_areas/gradeschools/index.html"
-            hx-target="#content-body"
-            hx-swap="innerHTML">
-                Grunnskólar
-            </button>
-        </div>
-    </header>
-
     <main id="content-body" class="p-6 text-center">
         <!--Hér kemur JS fyrir úti leiksvæði sem sýnir öll Leiksvæði-->
         <p class="text-gray-500">Hér kemur JS fyrir úti leiksvæði
