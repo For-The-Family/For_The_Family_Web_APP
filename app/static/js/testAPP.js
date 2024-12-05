@@ -14,49 +14,8 @@ let activitiesCheckboxes = [];
 let CitiesCheckboxes = [];
 let userCoordinates = null;
 
-var map = L.map('map').setView([0, 0], 1);
 
-const openCloesup = (itemHTML, lat, lng) => {
-    closeup.innerHTML = itemHTML;
-    const mapDiv = document.createElement('div');
-    mapDiv.id = 'map';
-    mapDiv.className = 'map-container';
-    closeup.appendChild(mapDiv);
-    closeup.classList.remove("hidden");
-    overlay.classList.remove("hidden");
 
-    // Initialize Leaflet map
-    if (typeof map !== "undefined") {
-        map.remove(); // Remove any existing map instance
-    }
-    map = L.map('map').setView([lat, lng], 13);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
-    L.marker([lat, lng]).addTo(map);
-    map.invalidateSize(); // Ensure the map renders correctly
-    console.log("lat", lat, "lng", lng);
-};
-  
-  
-if (openCloesupBtn) {
-    openCloesupBtn.addEventListener("click", openCloesup);
-}
-  
-const closeCloesup = () => {
-    closeup.classList.add("hidden");
-    overlay.classList.add("hidden");
-};
-  
-if (closeCloesupBtn) {
-    closeCloesupBtn.addEventListener("click", closeCloesup);
-}
-  
-  overlay.addEventListener("click", closeCloesup);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !closeup.classList.contains("hidden")) {
-        closeCloesup();
-    }
-  });
 
 const icelandicOrder = [
     'A', 'Á', 'B', 'D', 'Ð', 'E', 'É', 'F', 'G', 'H', 'I', 'Í', 'J', 'K', 'L', 'M', 'N', 'O', 'Ó', 
@@ -261,6 +220,48 @@ async function createfacilitiesCheckboxes() {
 }
 
 let facilitiesCheckboxes = [];
+
+
+// this is for the map took 1 hour and 40 min, 4:00 - 5:40
+
+const openCloesup = (itemHTML, lat, lng) => {
+    closeup.innerHTML = itemHTML;
+    const mapDiv = document.createElement('div');
+    mapDiv.id = 'map';
+    mapDiv.className = 'map-container';
+    closeup.appendChild(mapDiv);
+    closeup.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+    map = L.map('map').setView([lat, lng], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+    L.marker([lat, lng]).addTo(map);
+};
+  
+  
+if (openCloesupBtn) {
+    openCloesupBtn.addEventListener("click", openCloesup);
+}
+  
+const closeCloesup = () => {
+    closeup.classList.add("hidden");
+    overlay.classList.add("hidden");
+};
+  
+if (closeCloesupBtn) {
+    closeCloesupBtn.addEventListener("click", closeCloesup);
+}
+  
+  overlay.addEventListener("click", closeCloesup);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !closeup.classList.contains("hidden")) {
+        closeCloesup();
+    }
+  });
+
+  //
+
+
 
 const renderItems = (items) => {
     return items
