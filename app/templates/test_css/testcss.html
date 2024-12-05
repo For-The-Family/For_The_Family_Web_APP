@@ -10,67 +10,75 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
-
         <title>Who Would Read This?, I would read this!</title>
-        <!--<script src="testAPP.js" defer></script>-->
         <!--windtail-->
-        <script src="app/templates/aindex.html"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
         <!--HTMLX-->
         <script src="https://unpkg.com/htmx.org@1.8.4"></script>
-        <!--CSS file so far dont need it-->
-        <!--<link rel="stylesheet" href="/test_frontpagecss.css.css">-->
+        <!--JS file fyrir module-->
+        <script src="../../static/js/testAPP.js" defer></script>
     </head>
-    <body>
-        <header>
-            <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
-            
-            <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
-                
-                <!--Vantar að láta route I run.py og rétta hx-get: -->
-                <button
-                    class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
-                    hx-get="app/templates/aindex.html" 
-                    hx.target="#responce-content"
-                    hx-swap="innerHTML">
-                    Leiksvæði
-                </button>
-                <!--Vantar að láta route I run.py og rétta hx-get: -->
-                <button
-                    class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded shadow-2xl"
-                    hx-get="/veitingar"
-                    hx.target="#responce-content"
-                    hx-swap="innerHTML">
-                    veitingastaðir
-                </button>
-                <ul class="right-links">
-                </ul>
-            </div>
-        </header>
-        <main id="responce-content" class="mt-4 p-4 border border-gray-300 rounded">
-            <p class="text-gray-500">Click a button above to load content...</p>
-        </main>
-
-        <!--
+    
+    <header>
         <div id="root">
+            <dialog open class="bg-purple-500 rounded-full shadow-lg grid text-center mx-auto p-8 fixed inset-0 w-2/3 max-wl h-98">
+                <div class="order-first">
+                    <h2 class="mb-5 mt-10 text-3xl font-bold">
+                        Leiksvæði og veitingastaðir
+                    </h2>
+                    <h3 class="mb-5 text-xl font-semibold text-white-100">
+                        Findu það sem þig vantar.. Núna!
+                    </h3>
+                    <p class="mb-4 text-black-700 leading-relaxed">
+                    Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                    eina sem þú gerir á okkar síðu
+                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.+
+                    </p>
+                </div>
+                <div class="order-2">
+                    <p class="mb-4 text-black-700 leading-relaxed">Fyrir fram þakkir ♡ </p>
+                </div>
+                <div class="order-last mt-8">
+                    <button class="bg-green-500 hover:bg-green-700 font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-green-300">
+                        OK
+                    </button>
+                </div>            
+                </dialog>
             <div id="content"></div>
             <p id="message"></p>
             <p id="loading"></p>
         </div>
+        
+        <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
+        
+        <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
+            
+            <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
+            <button
+                class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                hx-get="/leiksvaedi" 
+                hx-target="#content"
+                gx-swap="innerHTML">
+                Leiksvæði
+            </button>
+            <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
+            <button
+                class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                hx-get="/veitingar"
+                hx-target="#content"
+                gx-swap="innerHTML">
+                veitingastaðir
+            </button>
+        </div>
+    </header>
 
-        <div id="overlay" class="overlay hidden"></div>
-        <section id="item-modal" class="modal hidden"></section>
-        <div id="map" class="map-container hidden"></div>
-        -->
-    
+    <body>    
+        <div id="root">
+            <div id="content"></div>
+        </div>
+    </body>
     <footer class="grid-cols-1 ml-5" >
         <h6>Verkefni eftir : Diljá, Jón & Örn.</h6>
     </footer>
-</body>
-    <!--        
-    <footer class="menu">
-        <li><a href="{{ url_for('front_page.home') }}">Home</a></li>
-        <li><a href="{{ url_for('kindergartens_bp.index') }}">Kindergartens</a></li>
-        <li><a href="{{ url_for('test_js.index') }}">Java Script Testing</a></li>
-        <li><a href="{{ url_for('test_css.index') }}">CSS Testing</a></li>
-    </footer> -->
 </html>

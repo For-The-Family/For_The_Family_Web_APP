@@ -15,9 +15,42 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <!--HTMLX-->
         <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+        <!--JS file fyrir module-->
+        <script src="app/static/js/testAPP.js"></script>
+        
     </head>
     
     <header>
+        <div id="root">
+            <dialog open class="bg-purple-500 rounded-full shadow-lg grid text-center mx-auto p-8 fixed inset-0 w-2/3 max-wl h-98">
+                <div class="order-first">
+                    <h2 class="mb-5 mt-10 text-3xl font-bold">
+                        Leiksvæði og veitingastaðir
+                    </h2>
+                    <h3 class="mb-5 text-xl font-semibold text-white-100">
+                        Findu það sem þig vantar.. Núna!
+                    </h3>
+                    <p class="mb-4 text-black-700 leading-relaxed">
+                    Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                    eina sem þú gerir á okkar síðu
+                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.+
+                    </p>
+                </div>
+                <div class="order-2">
+                    <p class="mb-4 text-black-700 leading-relaxed">Fyrir fram þakkir ♡ </p>
+                </div>
+                <div class="order-last mt-8">
+                    <button class="bg-green-500 hover:bg-green-700 font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-green-300">
+                        OK
+                    </button>
+                </div>            
+                </dialog>
+            <div id="content"></div>
+            <p id="message"></p>
+            <p id="loading"></p>
+        </div>
+        
         <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
         
         <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
