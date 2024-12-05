@@ -224,13 +224,31 @@ async function createfacilitiesCheckboxes() {
 
 // this is for the map took 1 hour and 40 min, 4:00 - 5:40
 // adding the rest of the items took me 30 min 5:40 - 6:10
-// Taking a break 6:10 - 6:xx to think of what i can do next
+// Taking a time off coding 6:10 - 7:00 to think of what i can do next if you don't think this counts i will be :(
 // Want to make kindergardens and schools next BUT i don't have the data But the answer should be easy
 // Things i can do are
 // 1. Make a counter in map when clicks shows how far you are
 // 2. if we have filter for kindergardens and schools we can make a filter for them asking in discord
+// fixed a small bug
+// 3. clean up the code i guess
+// 4. Make a new js just so the popup happens at the starter page
+// 5. My brain is not working :( 
+// Just been told 2 won't happen and 1 would not but am still gonna make the code for 1 so i can show i have been doing anything
+// 6. guess i could make a search bar but we agreed to not do that
 
-const openCloesup = (name, city, openingHours, minAge, activities, facilities, lat, lng) => {
+// it's now 7:00 i have food now for a real brake
+
+
+// Some extra stuff so i can't be called out we agreed to remove the local storage raiting since we don't have the time to do it
+// Also i could just add an @ after the map where they could ask to remove
+
+// 7:45 back from a brake was asked to switch lat and lng to street address if this work would be a waste of my time :(
+// 7:50 found out how to do it with street address just need to make it work
+// 8:40 in a call with dillia 
+// 8:55 Got the street map to to work
+
+
+const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
 
     const contentHTML = `
         <h3>${name}</h3>
@@ -246,10 +264,27 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, l
     closeup.classList.remove("hidden");
     overlay.classList.remove("hidden");
 
-    const mapDiv = document.getElementById('map');
-    const map = L.map(mapDiv).setView([lat, lng], 13);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
-    L.marker([lat, lng]).addTo(map);
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    console.log(street_address);
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(street_address)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.length > 0) {
+                var lat = data[0].lat;
+                var lon = data[0].lon;
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup("Address: " + street_address)
+                    .openPopup();
+            } else {
+                console.error("Address not found!");
+            }
+        })
 };
 
 const closeUpItems = document.querySelectorAll('.closeUp-item');
@@ -261,10 +296,10 @@ closeUpItems.forEach((item) => {
         const minAge = item.dataset.minAge;
         const activities = item.dataset.activities;
         const facilities = item.dataset.facilities;
-        const lat = item.dataset.lat;
-        const lng = item.dataset.lng;
 
-        openCloesup(name, city, openingHours, minAge, activities, facilities, lat, lng);
+        const street_address = item.dataset.street_address;
+
+        openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
     });
 });
 
@@ -291,8 +326,8 @@ if (closeCloesupBtn) {
 
   const renderItems = (items) => {
     return items
-        .map(({ name, city, opening_hours, minimum_age, image_path, latitude, longitude, activities, facilities }) =>
-            `<li class="closeUp-item" data-lat="${latitude}" data-lng="${longitude}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
+        .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) =>
+            `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
                 <h3>${name}</h3>
                 <p><strong>City:</strong> ${city}</p>
                 <p><strong>Opening Hours:</strong> ${opening_hours}</p>
@@ -346,10 +381,11 @@ const updateDisplay = async () => {
                 const minAge = item.dataset.minAge;
                 const activities = item.dataset.activities;
                 const facilities = item.dataset.facilities;
-                const lat = item.dataset.lat;
-                const lng = item.dataset.lng;
+                const street_address = item.dataset.streetAddress;
+                console.log(street_address);
+                console.log(item);
         
-                openCloesup(name, city, openingHours, minAge, activities, facilities, lat, lng);
+                openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
             });
         });
     } else {
