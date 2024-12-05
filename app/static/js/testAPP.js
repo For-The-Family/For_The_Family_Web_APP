@@ -247,9 +247,22 @@ async function createfacilitiesCheckboxes() {
 // 8:40 in a call with dillia 
 // 8:55 Got the street map to to work
 
-
+/*
+                    const contentHTML = `
+                    <h3>${name}</h3>
+                    <p><strong>City:</strong> ${city}</p>
+                    <p><strong>Opening Hours:</strong> ${openingHours}</p>
+                    <p><strong>Minimum Age:</strong> ${minAge}</p>
+                    <p><strong>Activities:</strong> ${activities}</p>
+                    <p><strong>Facilities:</strong> ${facilities}</p>
+                    <p><strong>Distance from you:</strong> ${getDistanceFromUser({ Latitude: lat, Longitude: lon }).toFixed(2) + ' km'}</p>
+                    <div id="map" class="map-container"></div>
+                `;
+                closeup.innerHTML = contentHTML;
+*/
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
-
+    
+    
     const contentHTML = `
         <h3>${name}</h3>
         <p><strong>City:</strong> ${city}</p>
@@ -270,7 +283,11 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+    getUserLocation()
 
+
+
+// THIS FEELS LIKE SPAGHETTI CODE BUT IT WORKS JUST BUY YOUR OWN MAP
     console.log(street_address);
     fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(street_address)}`)
         .then(response => response.json())
@@ -281,6 +298,18 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
                 L.marker([lat, lon]).addTo(map)
                     .bindPopup("Address: " + street_address)
                     .openPopup();
+                    if (userCoordinates) {
+                        L.marker([userCoordinates.latitude, userCoordinates.longitude]).addTo(map)
+                            .bindPopup("You are here")
+                            .openPopup();
+                    }
+                    console.log(lat, lon);
+                    console.log(userCoordinates);
+                    userCoordinates
+                    const distance = getDistanceFromUser({ Latitude: lat, Longitude: lon }).toFixed(2) + ' km'
+                    const distanceElement = document.createElement('p');
+                    distanceElement.innerHTML = `<strong>Distance from you:</strong> ${distance}`;
+                    closeup.appendChild(distanceElement);
             } else {
                 console.error("Address not found!");
             }
