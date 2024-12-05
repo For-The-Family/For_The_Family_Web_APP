@@ -15,14 +15,11 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <!--HTMLX-->
         <script src="https://unpkg.com/htmx.org@1.8.4"></script>
-        <!--JS file fyrir module-->
-        <script src="app/static/js/testAPP.js"></script>
-        
     </head>
     
     <header>
         <div id="root">
-            <dialog open class="bg-purple-500 rounded-full shadow-lg grid text-center mx-auto p-8 fixed inset-0 w-2/3 max-wl h-98">
+            <dialog id="modal" open class="bg-white rounded-full shadow-lg grid text-center mx-auto p-8 fixed inset-0 w-2/3 max-wl h-98 modal">
                 <div class="order-first">
                     <h2 class="mb-5 mt-10 text-3xl font-bold">
                         Leiksvæði og veitingastaðir
@@ -41,7 +38,7 @@
                     <p class="mb-4 text-black-700 leading-relaxed">Fyrir fram þakkir ♡ </p>
                 </div>
                 <div class="order-last mt-8">
-                    <button class="bg-green-500 hover:bg-green-700 font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-green-300">
+                    <button class="bg-green-500 hover:bg-green-700 font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-green-300 btn-close">
                         OK
                     </button>
                 </div>            
@@ -50,6 +47,8 @@
             <p id="message"></p>
             <p id="loading"></p>
         </div>
+        <!-- Overlay -->
+        <div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden"></div>
         
         <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
         
@@ -79,7 +78,29 @@
             <div id="content"></div>
         </div>
     </body>
-    <footer class="grid-cols-1 ml-5" >
-        <h6>Verkefni eftir : Diljá, Jón & Örn.</h6>
+    <footer class="ml-5 mt-4" >
+        <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
     </footer>
 </html>
+<script>
+    const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const closeModalBtn = document.querySelector(".btn-close");
+
+// close modal function
+const closeModal = function () {
+modal.classList.add("hidden");
+overlay.classList.add("hidden");
+};
+
+// close the modal when the close button and overlay is clicked
+closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// close modal when the Esc key is pressed
+document.addEventListener("keydown", function (e) {
+if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+closeModal();
+}
+});
+</script>
