@@ -1248,3 +1248,17 @@ INSERT INTO kindergarten_facilities (kindergarten_id, facility_id, is_available)
 
 /* #endregion */
 
+
+
+
+
+/* #region Update to tables or data */
+
+Select image_path, id, name from kindergartens;
+
+
+UPDATE kindergartens 
+SET image_path = images/reykjavik/
+WHERE id = ;
+
+/* #endregion */

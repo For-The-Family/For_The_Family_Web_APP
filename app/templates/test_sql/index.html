@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,3 +53,57 @@
     <div id="results"></div>
 </body>
 </html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindergarten Search</title>
+    <script>
+        let selectedCity = ''; // Track the selected city
+
+        // Function to update the selected city and perform a search
+        function filterByCity(city) {
+            selectedCity = city; // Update the city
+            searchDatabase('');  // Trigger a search without a query
+        }
+
+        // Function to perform a search based on query and selected city
+        function searchDatabase(query) {
+            const url = `/search?city=${encodeURIComponent(selectedCity)}&q=${encodeURIComponent(query)}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const resultHTML = data.map(item => `
+                        <div class="result-item">
+                            <p><strong>${item.name}</strong></p>
+                            <p>${item.street_address}, ${item.city}</p>
+                            <p>Open: ${item.opening_hours}</p>
+                        </div><hr>`).join('');
+                    document.getElementById("results").innerHTML = resultHTML;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Kindergarten Search</h1>
+    
+    <!-- Filter Buttons -->
+    <div>
+        <button onclick="filterByCity('reykjavik')">Reykjavik</button>
+        <button onclick="filterByCity('Hafnarfjordur')">Hafnarfjordur</button>
+        <button onclick="filterByCity('Kopavogur')">Kopavogur</button>
+        <button onclick="filterByCity('')">All Cities</button>
+    </div>
+    
+    <!-- Search Bar -->
+    <input type="text" placeholder="Search by name or address..." onkeyup="searchDatabase(this.value)">
+    
+    <!-- Results Section -->
+    <div id="results"></div>
+</body>
+</html>
+
