@@ -12,6 +12,7 @@ const closeCloesupBtn = document.querySelector(".btn-close");
 
 let activitiesCheckboxes = [];
 let CitiesCheckboxes = [];
+let facilitiesCheckboxes = [];
 let userCoordinates = null;
 
 
@@ -219,11 +220,15 @@ async function createfacilitiesCheckboxes() {
     });
 }
 
-let facilitiesCheckboxes = [];
 
 
 // this is for the map took 1 hour and 40 min, 4:00 - 5:40
 // adding the rest of the items took me 30 min 5:40 - 6:10
+// Taking a break 6:10 - 6:xx to think of what i can do next
+// Want to make kindergardens and schools next BUT i don't have the data But the answer should be easy
+// Things i can do are
+// 1. Make a counter in map when clicks shows how far you are
+// 2. if we have filter for kindergardens and schools we can make a filter for them asking in discord
 
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, lat, lng) => {
 
@@ -323,7 +328,7 @@ const updateDisplay = async () => {
             const matchescity = selectedCities.length === 0 || selectedCities.includes(item.city);
             const matchesActivities = selectedActivities.every(activities => item.activities.is_available[activities]);
             const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-            const matchesFacilities = selectedFacilities.every(facility => item.facilities[facility]);
+            const matchesFacilities = selectedFacilities.every(facility => item.facilities.is_available[facility]);
             return matchesActivities && matchescity && matchesFacilities;
         
         });
