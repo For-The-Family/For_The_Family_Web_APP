@@ -248,7 +248,7 @@ async function createfacilitiesCheckboxes() {
 // 8:55 Got the street map to to work
 // 9:00 Starting working on 1 sees how far you are
 // 9:50 Done with the distance from user to target even added a mark just don't look at the code
-
+// 9:50 to 10:xx helping dillia with her code
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
     
     
