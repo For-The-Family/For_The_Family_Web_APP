@@ -1,20 +1,66 @@
-const vmodal = document.getElementById("item-modal");
-const overlay = document.getElementById("overlay");
+const vmodal = document.getElementById("item-closeup");
 const root = document.getElementById("root");
 const modal = document.querySelector("#modal");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-
+const closeup = document.getElementById("item-closeup");
+const overlay = document.getElementById("overlay");
+const openCloesupBtn = document.querySelector(".btn-open");
+const closeCloesupBtn = document.querySelector(".btn-close");
 
 let activitiesCheckboxes = [];
+let map;
 let CitiesCheckboxes = [];
 let userCoordinates = null;
 
 
 
+const openCloesup = (itemHTML, lat, lng) => {
+
+    closeup.innerHTML = itemHTML;
+    const mapDiv = document.createElement('div');
+    mapDiv.id = 'map';
+    mapDiv.className = 'map-container';
+    closeup.appendChild(mapDiv);
+    closeup.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+
+    // Initialize Leaflet map
+    if (typeof map !== "undefined") {
+        map.remove(); // Remove any existing map instance
+    }
+    var L = window.L;
+
+    map = L.map('map').setView([lat, lng], 13);
+    
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+    L.marker([lat, lng]).addTo(map);
+    map.invalidateSize(); // Ensure the map renders correctly
+    console.log("lat", lat, "lng", lng);
+};
+    
+if (openCloesupBtn) {
+    openCloesupBtn.addEventListener("click", openCloesup);
+}
+  
+const closeCloesup = () => {
+    closeup.classList.add("hidden");
+    overlay.classList.add("hidden");
+};
+  
+if (closeCloesupBtn) {
+    closeCloesupBtn.addEventListener("click", closeCloesup);
+}
+  
+  overlay.addEventListener("click", closeCloesup);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !closeup.classList.contains("hidden")) {
+        closeCloesup();
+    }
+  });
 
 const icelandicOrder = [
     'A', 'Á', 'B', 'D', 'Ð', 'E', 'É', 'F', 'G', 'H', 'I', 'Í', 'J', 'K', 'L', 'M', 'N', 'O', 'Ó', 
@@ -222,8 +268,8 @@ let facilitiesCheckboxes = [];
 
 const renderItems = (items) => {
     return items
-        .map(({ name, city, OpeningHours, MinimumAge, image_path, Activities, facilities }) =>
-            `<li class="coaster-item">
+        .map(({ name, city, OpeningHours, MinimumAge, image_path, Activities, facilities, latitude, longitude}) =>
+            `<li class="coaster-item" data-lat="${latitude}" data-lng="${longitude}">
                 <h3>${name}</h3>
                 <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
             </li>`
@@ -256,14 +302,26 @@ const updateDisplay = async () => {
 
         sortedItems = sortedItems.filter(item => {
             const matchescity = selectedCities.length === 0 || selectedCities.includes(item.city);
-            const matchesActivities = selectedActivities.every(activities => item.activities[activities]);
+            const matchesActivities = selectedActivities.every(activities => item.activities.is_available[activities]);
             const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
             const matchesFacilities = selectedFacilities.every(facility => item.facilities[facility]);
             return matchesActivities && matchescity && matchesFacilities;
+        
         });
 
         const content = document.querySelector('#content');
         content.innerHTML = `<ul>${renderItems(sortedItems)}</ul>`;
+
+        //this is from old code
+        const coasterItems = document.querySelectorAll('.coaster-item');
+        coasterItems.forEach((item) => {
+        item.addEventListener('click', () => {
+        const lat = item.getAttribute('data-lat');
+        const lng = item.getAttribute('data-lng');
+        console.log("lat",lat,"Ling", lng);
+        openCloesup(item.innerHTML, lat, lng);
+      });
+    });
     } else {
         console.error('No items to display');
     }
