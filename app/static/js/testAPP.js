@@ -305,10 +305,13 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
                     }
                     console.log(lat, lon);
                     console.log(userCoordinates);
-                    userCoordinates
                     const distance = getDistanceFromUser({ Latitude: lat, Longitude: lon }).toFixed(2) + ' km'
                     const distanceElement = document.createElement('p');
-                    distanceElement.innerHTML = `<strong>Distance from you:</strong> ${distance}`;
+                    if (distance === 'Infinity km') {
+                        distanceElement.innerHTML = `<strong>Distance from you:</strong> Can't locate or turned off geo`;
+                    } else {
+                        distanceElement.innerHTML = `<strong>Distance from you:</strong> ${distance}`;
+                    }
                     closeup.appendChild(distanceElement);
             } else {
                 console.error("Address not found!");
