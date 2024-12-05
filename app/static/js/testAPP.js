@@ -11,14 +11,12 @@ const openCloesupBtn = document.querySelector(".btn-open");
 const closeCloesupBtn = document.querySelector(".btn-close");
 
 let activitiesCheckboxes = [];
-let map;
 let CitiesCheckboxes = [];
 let userCoordinates = null;
 
-
+var map = L.map('map').setView([0, 0], 1);
 
 const openCloesup = (itemHTML, lat, lng) => {
-
     closeup.innerHTML = itemHTML;
     const mapDiv = document.createElement('div');
     mapDiv.id = 'map';
@@ -31,16 +29,14 @@ const openCloesup = (itemHTML, lat, lng) => {
     if (typeof map !== "undefined") {
         map.remove(); // Remove any existing map instance
     }
-    var L = window.L;
-
     map = L.map('map').setView([lat, lng], 13);
-    
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
     L.marker([lat, lng]).addTo(map);
     map.invalidateSize(); // Ensure the map renders correctly
     console.log("lat", lat, "lng", lng);
 };
-    
+  
+  
 if (openCloesupBtn) {
     openCloesupBtn.addEventListener("click", openCloesup);
 }
