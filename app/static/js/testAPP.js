@@ -246,20 +246,9 @@ async function createfacilitiesCheckboxes() {
 // 7:50 found out how to do it with street address just need to make it work
 // 8:40 in a call with dillia 
 // 8:55 Got the street map to to work
+// 9:00 Starting working on 1 sees how far you are
+// 9:50 Done with the distance from user to target even added a mark just don't look at the code
 
-/*
-                    const contentHTML = `
-                    <h3>${name}</h3>
-                    <p><strong>City:</strong> ${city}</p>
-                    <p><strong>Opening Hours:</strong> ${openingHours}</p>
-                    <p><strong>Minimum Age:</strong> ${minAge}</p>
-                    <p><strong>Activities:</strong> ${activities}</p>
-                    <p><strong>Facilities:</strong> ${facilities}</p>
-                    <p><strong>Distance from you:</strong> ${getDistanceFromUser({ Latitude: lat, Longitude: lon }).toFixed(2) + ' km'}</p>
-                    <div id="map" class="map-container"></div>
-                `;
-                closeup.innerHTML = contentHTML;
-*/
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
     
     
