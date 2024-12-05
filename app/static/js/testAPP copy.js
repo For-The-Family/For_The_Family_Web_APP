@@ -154,10 +154,9 @@ async function createcityCheckboxes() {
 async function createActivityCheckboxes() {
     const items = await getItems();
     const activities = items.reduce((acc, item) => {
-        item.activities.forEach(activity => {
-            if (!acc.includes(activity)) {
-                console.log(activity);
-                acc.push(activity);
+        Object.keys(item.activities).forEach(activities => {
+            if (!acc.includes(activities)) {
+                acc.push(activities);
             }
         });
         return acc;
@@ -173,7 +172,7 @@ async function createActivityCheckboxes() {
 
         let label = document.createElement("label");
         label.htmlFor = activities;
-        label.innerText = activities;
+        label.innerText = activities; //change this
 
         activityContainer.appendChild(checkbox);
         activityContainer.appendChild(label);
@@ -188,7 +187,7 @@ async function createActivityCheckboxes() {
 async function createfacilitiesCheckboxes() {
     const items = await getItems();
     const facilities = items.reduce((acc, item) => {
-        item.facilities.forEach(facility => {
+        Object.keys(item.facilities).forEach(facility => {
             if (!acc.includes(facility)) {
                 acc.push(facility);
             }
