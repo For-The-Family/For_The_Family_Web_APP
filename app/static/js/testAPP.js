@@ -223,25 +223,47 @@ let facilitiesCheckboxes = [];
 
 
 // this is for the map took 1 hour and 40 min, 4:00 - 5:40
+// adding the rest of the items took me 30 min 5:40 - 6:10
 
-const openCloesup = (itemHTML, lat, lng) => {
-    closeup.innerHTML = itemHTML;
-    const mapDiv = document.createElement('div');
-    mapDiv.id = 'map';
-    mapDiv.className = 'map-container';
-    closeup.appendChild(mapDiv);
+const openCloesup = (name, city, openingHours, minAge, activities, facilities, lat, lng) => {
+
+    const contentHTML = `
+        <h3>${name}</h3>
+        <p><strong>City:</strong> ${city}</p>
+        <p><strong>Opening Hours:</strong> ${openingHours}</p>
+        <p><strong>Minimum Age:</strong> ${minAge}</p>
+        <p><strong>Activities:</strong> ${activities}</p>
+        <p><strong>Facilities:</strong> ${facilities}</p>
+        <div id="map" class="map-container"></div>
+    `;
+
+    closeup.innerHTML = contentHTML;
     closeup.classList.remove("hidden");
     overlay.classList.remove("hidden");
-    map = L.map('map').setView([lat, lng], 13);
+
+    const mapDiv = document.getElementById('map');
+    const map = L.map(mapDiv).setView([lat, lng], 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
     L.marker([lat, lng]).addTo(map);
 };
-  
-  
-if (openCloesupBtn) {
-    openCloesupBtn.addEventListener("click", openCloesup);
-}
-  
+
+const closeUpItems = document.querySelectorAll('.closeUp-item');
+closeUpItems.forEach((item) => {
+    item.addEventListener('click', () => {
+        const name = item.dataset.name;
+        const city = item.dataset.city;
+        const openingHours = item.dataset.openingHours;
+        const minAge = item.dataset.minAge;
+        const activities = item.dataset.activities;
+        const facilities = item.dataset.facilities;
+        const lat = item.dataset.lat;
+        const lng = item.dataset.lng;
+
+        openCloesup(name, city, openingHours, minAge, activities, facilities, lat, lng);
+    });
+});
+
+
 const closeCloesup = () => {
     closeup.classList.add("hidden");
     overlay.classList.add("hidden");
@@ -258,20 +280,20 @@ if (closeCloesupBtn) {
         closeCloesup();
     }
   });
-
   //
 
 
 
-const renderItems = (items) => {
+  const renderItems = (items) => {
     return items
-        .map(({ name, city, OpeningHours, MinimumAge, image_path, Activities, facilities, latitude, longitude}) =>
-            `<li class="coaster-item" data-lat="${latitude}" data-lng="${longitude}">
+        .map(({ name, city, opening_hours, minimum_age, image_path, latitude, longitude, activities, facilities }) =>
+            `<li class="closeUp-item" data-lat="${latitude}" data-lng="${longitude}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
                 <h3>${name}</h3>
+                <p><strong>City:</strong> ${city}</p>
+                <p><strong>Opening Hours:</strong> ${opening_hours}</p>
                 <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
             </li>`
         )
-
         .join('');
 };
 
@@ -310,15 +332,21 @@ const updateDisplay = async () => {
         content.innerHTML = `<ul>${renderItems(sortedItems)}</ul>`;
 
         //this is from old code
-        const coasterItems = document.querySelectorAll('.coaster-item');
-        coasterItems.forEach((item) => {
-        item.addEventListener('click', () => {
-        const lat = item.getAttribute('data-lat');
-        const lng = item.getAttribute('data-lng');
-        console.log("lat",lat,"Ling", lng);
-        openCloesup(item.innerHTML, lat, lng);
-      });
-    });
+        const closeUpItems = document.querySelectorAll('.closeUp-item');
+        closeUpItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const name = item.dataset.name;
+                const city = item.dataset.city;
+                const openingHours = item.dataset.openingHours;
+                const minAge = item.dataset.minAge;
+                const activities = item.dataset.activities;
+                const facilities = item.dataset.facilities;
+                const lat = item.dataset.lat;
+                const lng = item.dataset.lng;
+        
+                openCloesup(name, city, openingHours, minAge, activities, facilities, lat, lng);
+            });
+        });
     } else {
         console.error('No items to display');
     }
