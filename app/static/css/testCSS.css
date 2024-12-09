@@ -117,18 +117,7 @@ li:hover {
   margin-top: 20px;
 }
 
-.overlay {
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.5);
-backdrop-filter: blur(3px);
-z-index: 1;
-}
+
 
 
 /* i hate css i spent so much time fixing AND USING CHATGPT to just have to move the hidden fucking above this!!!! AND I KNEW IT GOES FROM TOP TO BOTTOM I HATE THIS */
@@ -156,12 +145,55 @@ z-index: 1;
   z-index: 2;
 }
 
-.map-container {
-  width: 100%;
-  height: 300px;
-  margin-top: 20px;
-}
 
-.hidden {
-  display: none;
-}
+
+/* this is the overlay */
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  }
+  
+  
+  /* i hate css i spent so much time fixing AND USING CHATGPT to just have to move the hidden fucking above this!!!! AND I KNEW IT GOES FROM TOP TO BOTTOM I HATE THIS */
+  .closeup {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  width: 450px;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 2;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
