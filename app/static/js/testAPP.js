@@ -227,7 +227,9 @@ async function createfacilitiesCheckboxes() {
 
 // first started to switch it to icelandic finished 3:55 pm and noticed forgot to make a project /:
 
-// 3:55 pm started to make the Filter work 
+// 3:55 pm started to make the Filter work... 4:30 pm There is no why I can fix this the SQL is the issue I have no idea how I can fix it
+
+// 8:30 started compining the code
 
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
     
@@ -248,8 +250,6 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
     overlay.classList.remove("hidden");
 
     var map = L.map('map').setView([0, 0], 12);
-
-    //var map = L.map('map').setView([51.505, -0.09], 13);
 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
