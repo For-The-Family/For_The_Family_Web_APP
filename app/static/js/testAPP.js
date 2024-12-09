@@ -222,43 +222,24 @@ async function createfacilitiesCheckboxes() {
 
 
 
-// this is for the map took 1 hour and 40 min, 4:00 - 5:40
-// adding the rest of the items took me 30 min 5:40 - 6:10
-// Taking a time off coding 6:10 - 7:00 to think of what i can do next if you don't think this counts i will be :(
-// Want to make kindergardens and schools next BUT i don't have the data But the answer should be easy
-// Things i can do are
-// 1. Make a counter in map when clicks shows how far you are
-// 2. if we have filter for kindergardens and schools we can make a filter for them asking in discord
-// fixed a small bug
-// 3. clean up the code i guess
-// 4. Make a new js just so the popup happens at the starter page
-// 5. My brain is not working :( 
-// Just been told 2 won't happen and 1 would not but am still gonna make the code for 1 so i can show i have been doing anything
-// 6. guess i could make a search bar but we agreed to not do that
 
-// it's now 7:00 i have food now for a real brake
+// start working 3:30 pm but i am sick so i will be slower i think
 
+// first started to switch it to icelandic finished 3:55 pm and noticed forgot to make a project /:
 
-// Some extra stuff so i can't be called out we agreed to remove the local storage raiting since we don't have the time to do it
-// Also i could just add an @ after the map where they could ask to remove
+// 3:55 pm started to make the Filter work 
 
-// 7:45 back from a brake was asked to switch lat and lng to street address if this work would be a waste of my time :(
-// 7:50 found out how to do it with street address just need to make it work
-// 8:40 in a call with dillia 
-// 8:55 Got the street map to to work
-// 9:00 Starting working on 1 sees how far you are
-// 9:50 Done with the distance from user to target even added a mark just don't look at the code
-// 9:50 to 11:06 helping dillia with her code with modal
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
     
-    
+
     const contentHTML = `
         <h3>${name}</h3>
-        <p><strong>City:</strong> ${city}</p>
-        <p><strong>Opening Hours:</strong> ${openingHours}</p>
-        <p><strong>Minimum Age:</strong> ${minAge}</p>
-        <p><strong>Activities:</strong> ${activities}</p>
-        <p><strong>Facilities:</strong> ${facilities}</p>
+        <p><strong>Baearfelag:</strong> ${city}</p>
+        <p><strong>Opnunartímar:</strong> ${openingHours}</p>
+        <p><strong>Lágmarksaldur:</strong> ${minAge}</p>
+        <p><strong>Götuheiti:</strong> ${street_address}</p>
+        <p><strong>Virkni:</strong> ${activities}</p>
+        <p><strong>Aðstaða:</strong> ${facilities}</p>
         <div id="map" class="map-container"></div>
     `;
 
@@ -266,7 +247,9 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
     closeup.classList.remove("hidden");
     overlay.classList.remove("hidden");
 
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([0, 0], 12);
+
+    //var map = L.map('map').setView([51.505, -0.09], 13);
 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -285,25 +268,28 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
                 var lat = data[0].lat;
                 var lon = data[0].lon;
                 L.marker([lat, lon]).addTo(map)
-                    .bindPopup("Address: " + street_address)
+                    .bindPopup("Götuheiti: " + street_address)
                     .openPopup();
                     if (userCoordinates) {
                         L.marker([userCoordinates.latitude, userCoordinates.longitude]).addTo(map)
-                            .bindPopup("You are here")
+                            .bindPopup("Þú ert hér")
                             .openPopup();
                     }
                     console.log(lat, lon);
                     console.log(userCoordinates);
-                    const distance = getDistanceFromUser({ Latitude: lat, Longitude: lon }).toFixed(2) + ' km'
+                    const distance = getDistanceFromUser(lat, lon).toFixed(2) + ' km'
                     const distanceElement = document.createElement('p');
                     if (distance === 'Infinity km') {
-                        distanceElement.innerHTML = `<strong>Distance from you:</strong> Can't locate or turned off geo`;
+                        distanceElement.innerHTML = `<strong>Fjarlægð frá þér:</strong> Get ekki fundið eða slökkt`;
                     } else {
-                        distanceElement.innerHTML = `<strong>Distance from you:</strong> ${distance}`;
+                        distanceElement.innerHTML = `<strong>Fjarlægð frá þér:</strong> ${distance}`;
                     }
                     closeup.appendChild(distanceElement);
             } else {
-                console.error("Address not found!");
+                const distanceElement = document.createElement('p');
+                distanceElement.innerHTML = `<strong>Götuheiti ekki fundið`;
+                closeup.appendChild(distanceElement);
+
             }
         })
 };
@@ -350,8 +336,8 @@ if (closeCloesupBtn) {
         .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) =>
             `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
                 <h3>${name}</h3>
-                <p><strong>City:</strong> ${city}</p>
-                <p><strong>Opening Hours:</strong> ${opening_hours}</p>
+                <p><strong>Baearfelag:</strong> ${city}</p>
+                <p><strong>Opnunartímar:</strong> ${opening_hours}</p>
                 <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
             </li>`
         )
@@ -366,15 +352,16 @@ const updateDisplay = async () => {
         const selectedCities = CitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
         let sortedItems = items;
+        console.log("BEFORE THE THINGY",userCoordinates);
         if (sortingAB) {
             const sortedItems = items.sort(customSortAB);
             console.log(sortedItems);
         } else if (sortingGIO && userCoordinates) {
             console.log("START SORTING GIO")
-            sortedItems = sortedItems.filter(item => item.Location && item.Location.GeoLocation)
+            sortedItems = sortedItems.filter(item => item.latitude && item.longitude)
             .sort((a, b) => {
-                const distanceA = getDistanceFromUser(a.Location.GeoLocation);
-                const distanceB = getDistanceFromUser(b.Location.GeoLocation);
+                const distanceA = getDistanceFromUser(a.latitude, a.longitude);
+                const distanceB = getDistanceFromUser(b.latitude, b.longitude);
                 console.log('Distances:', distanceA, distanceB);
                 return distanceA - distanceB;
             });
@@ -424,7 +411,6 @@ const getUserLocation = () => {
                 longitude: position.coords.longitude
                 };
                 console.log(userCoordinates);
-                updateDisplay();
             },
         );
     }
@@ -434,19 +420,17 @@ const getUserLocation = () => {
     }
 };
 
-const getDistanceFromUser = (targetCoordinates) => {
-    if (!userCoordinates || !targetCoordinates) {
-        console.warn('STUCK FUCLKING IF SEE THIS MEANS CANT SEE THE OBJECTS CORDS OR USERS', { userCoordinates, targetCoordinates });
+const getDistanceFromUser = (lat2, lon2) => {
+    if (!userCoordinates || lat2 === undefined || lon2 === undefined) {
+        console.warn('STUCK FUCLKING IF SEE THIS MEANS CANT SEE THE OBJECTS CORDS OR USERS', { userCoordinates, lat2, lon2 });
         sortingAB = true
         sortingGIO = false
-        updateDisplay();
         return Infinity;
     }
 
     const lat1 = userCoordinates.latitude;
     const lon1 = userCoordinates.longitude;
-    const lat2 = targetCoordinates.Latitude;
-    const lon2 = targetCoordinates.Longitude;
+
 
     if (lat1 === undefined || lon1 === undefined || lat2 === undefined || lon2 === undefined) {
         console.warn('One of the coordinates is undefined:', { lat1, lon1, lat2, lon2 });
