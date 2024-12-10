@@ -14,57 +14,49 @@ def get_db_connection():
     )
     return conn
 
-# Route to render the index page
 @test_js_bp.route('/')
 def index():
     return render_template('test_js/index.html')
 
-# Route to handle search queries
 @test_js_bp.route('test_js/all', methods=['GET'])
 def get_all_kindergartens():
     query = """SELECT k.*, 
-                      ARRAY_AGG(DISTINCT a.activity_name) AS activities,
+                      JSON_AGG(JSON_BUILD_OBJECT('name', a.activity_name, 'is_available', ka.is_available)) AS activities,
                       ARRAY_AGG(DISTINCT f.facility_name) AS facilities
                FROM kindergartens k
-                JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
-                JOIN activities a ON ka.activity_id = a.id
-               JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
-               JOIN facilities f ON kf.facility_id = f.id
-               GROUP BY k.id"""
+               LEFT JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
+               LEFT JOIN activities a ON ka.activity_id = a.id
+               LEFT JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
+               LEFT JOIN facilities f ON kf.facility_id = f.id
+               GROUP BY k.id, k.name, k.city, k.street_address, k.postal_code, k.opening_hours, k.minimum_age, k.image_path"""
     try:
-        # Connect to the database
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 cur.execute(query)
-                columns = [desc[0] for desc in cur.description]  # Fetch column names
+                columns = [desc[0] for desc in cur.description]
                 results = cur.fetchall()
-                # Format the results into a list of dictionaries
                 response = [dict(zip(columns, row)) for row in results]
         return jsonify(response)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-# Route to fetch details of a specific kindergarten
-@test_js_bp.route('test_js/<int:kindergarten_id>', methods=['GET'])
 def kindergarten_details(kindergarten_id):
     query = """SELECT k.*, 
                       ARRAY_AGG(DISTINCT a.activity_name) AS activities,
                       ARRAY_AGG(DISTINCT f.facility_name) AS facilities
                FROM kindergartens k
-                JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
-                JOIN activities a ON ka.activity_id = a.id
-               JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
-               JOIN facilities f ON kf.facility_id = f.id
+                LEFT JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
+                LEFT JOIN activities a ON ka.activity_id = a.id
+               LEFT JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
+               LEFT JOIN facilities f ON kf.facility_id = f.id
                WHERE k.id = %s
-               GROUP BY k.id"""
+               GROUP BY k.id, k.name, k.city, k.street_address, k.postal_code, k.opening_hours, k.minimum_age, k.image_path"""
     try:
-        # Connect to the database
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 cur.execute(query, (kindergarten_id,))
                 row = cur.fetchone()
                 if row:
-                    columns = [desc[0] for desc in cur.description]  # Fetch column names
+                    columns = [desc[0] for desc in cur.description]
                     response = dict(zip(columns, row))
                     return jsonify(response)
                 else:
