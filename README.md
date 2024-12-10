@@ -31,6 +31,13 @@
 
 <img src="./Images/kindergarten_Simple.png">
 
+  * Eftir uppsetningu :
+<img src="./Images/ftf1.png">
+<img src="./Images/ftf2.png">
+<img src="./Images/ftf3.png">
+<img src="./Images/ftf4.png">
+<img src="./Images/ftf5.png">
+
 # Source Material
  * https://reykjavik.is/allir-leikskolar
 
