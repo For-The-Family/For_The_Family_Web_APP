@@ -7,8 +7,8 @@ var coll = document.getElementsByClassName("collapsible");
 
 const closeup = document.getElementById("item-closeup");
 const overlay = document.getElementById("overlay");
-const openCloesupBtn = document.querySelector(".btn-open");
-const closeCloesupBtn = document.querySelector(".btn-close");
+const opencloseupBtn = document.querySelector(".btn-open");
+const closecloseupBtn = document.querySelector(".btn-close");
 
 let activitiesCheckboxes = [];
 let CitiesCheckboxes = [];
@@ -65,16 +65,12 @@ const customSortAB = (a, b) => {
 openModal.addEventListener('click', () => { 
     if (modal && typeof modal.showModal === 'function') {
         modal.showModal();
-    } else {
-        console.error('Modal element does not support showModal method');
     }
 });
 
 closeModal.addEventListener('click', () => {
     if (modal && typeof modal.close === 'function') {
         modal.close();
-    } else {
-        console.error('Modal element does not support close method');
     }
 });
 
@@ -92,17 +88,30 @@ const getItems = async () => {
     try {
         const response = await fetch('test_js/all');
         const data = await response.json();
-        return data;
+return data;
     } catch (error) {
-        console.error('Failed to load data', error);
         document.querySelector('#message').innerText = 'Failed to load';
         return [];
     }
 };
 
 function createButtons() {
+    const sortButtonContainer = document.createElement('div');
+    sortButtonContainer.classList.add('grid', 'grid-cols-2', 'gap-4', 'p-4', 'mt-4');
+
     const sortByNameButton = document.createElement('button');
-    sortByNameButton.innerText = 'Sort by name';
+    sortByNameButton.innerText = 'Raða eftir nafni';
+    sortByNameButton.classList.add(
+        'bg-blue-500',
+        'hover:bg-blue-700',
+        'text-white',
+        'text-lg',
+        'font-bold',
+        'py-2',
+        'px-4',
+        'rounded-full',
+        'shadow-md'
+    );
     sortByNameButton.addEventListener('click', () => {
         sortingAB = true;
         sortingGIO = false;
@@ -110,16 +119,30 @@ function createButtons() {
     });
 
     const sortByGeolocationButton = document.createElement('button');
-    sortByGeolocationButton.innerText = 'Sort by Geolocation';
+    sortByGeolocationButton.innerText = 'Raða eftir Geolocation';
+    sortByGeolocationButton.classList.add(
+        'bg-green-500',
+        'hover:bg-green-700',
+        'text-white',
+        'text-lg',
+        'font-bold',
+        'py-2',
+        'px-4',
+        'rounded-full',
+        'shadow-md'
+    );
     sortByGeolocationButton.addEventListener('click', () => {
         sortingGIO = true;
         sortingAB = false;
-        getUserLocation()
+        getUserLocation();
         updateDisplay();
     });
 
-    root.appendChild(sortByNameButton);
-    root.appendChild(sortByGeolocationButton);
+    sortButtonContainer.appendChild(sortByNameButton);
+    sortButtonContainer.appendChild(sortByGeolocationButton);
+
+    const filterContainer = document.querySelector('.grid.grid-cols-3.gap-4.p-4');
+    filterContainer.insertAdjacentElement('afterend', sortButtonContainer);
 }
 
 async function createcityCheckboxes() {
@@ -155,27 +178,28 @@ async function createcityCheckboxes() {
 
 async function createActivityCheckboxes() {
     const items = await getItems();
-    const activities = items.reduce((acc, item) => {
+    
+    const uniqueActivities = new Set();
+    items.forEach(item => {
         item.activities.forEach(activity => {
-            if (!acc.includes(activity)) {
-                console.log(activity);
-                acc.push(activity);
-            }
+            uniqueActivities.add(activity.name);
         });
-        return acc;
-    }, []);
+    });
 
     const activityContainer = document.getElementById("activity-filters");
 
-    activities.forEach(activities => {
+    uniqueActivities.forEach(activityName => {
+
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.id = activities;
-        checkbox.value = activities;
+        checkbox.id = activityName;
+        checkbox.value = activityName;
 
         let label = document.createElement("label");
-        label.htmlFor = activities;
-        label.innerText = activities;
+        label.htmlFor = activityName;
+        if (activityName.trim() !== '') {
+            label.innerText = activityName;
+        }
 
         activityContainer.appendChild(checkbox);
         activityContainer.appendChild(label);
@@ -208,7 +232,9 @@ async function createfacilitiesCheckboxes() {
 
         let label = document.createElement("label");
         label.htmlFor = facility;
-        label.innerText = facility;
+        if (facility.trim() !== '') {
+            label.innerText = facility;
+        }
 
         facilityContainer.appendChild(checkbox);
         facilityContainer.appendChild(label);
@@ -229,10 +255,24 @@ async function createfacilitiesCheckboxes() {
 
 // 3:55 pm started to make the Filter work... 4:30 pm There is no why I can fix this the SQL is the issue I have no idea how I can fix it
 
-// 8:30 started compining the code
+// 8:30 pm started compining the code
 
-const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
+// 10:30 pm We ended since Jon had to go we would start at 8 tmr at school so we can finish the project
+
+// 8:20 am started to work on the project again
+
+// 10:20 am The others have left me i am still working
+
+// 11:50 am I am going dowm to the others to see if they are ready
+
+// 12:10 pm I am back to work!
+
+// 12:40 pm class started
+
+const opencloseup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
+
     
+    const uniqueActivities = [...new Set(activities.split(', ').map(item => item.trim()))];
 
     const contentHTML = `
         <h3>${name}</h3>
@@ -240,10 +280,14 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
         <p><strong>Opnunartímar:</strong> ${openingHours}</p>
         <p><strong>Lágmarksaldur:</strong> ${minAge}</p>
         <p><strong>Götuheiti:</strong> ${street_address}</p>
-        <p><strong>Virkni:</strong> ${activities}</p>
-        <p><strong>Aðstaða:</strong> ${facilities}</p>
+        <p><strong>Virkni:</strong> ${uniqueActivities.join(', ') || 'Engin virkni í boði'}</p>
+        <p><strong>Aðstaða:</strong> ${facilities || 'Food & Drinks, Parking, Toilets'}</p>
         <div id="map" class="map-container"></div>
     `;
+
+    closeup.innerHTML = contentHTML;
+    closeup.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 
     closeup.innerHTML = contentHTML;
     closeup.classList.remove("hidden");
@@ -260,7 +304,6 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
 
 
 // THIS FEELS LIKE SPAGHETTI CODE BUT IT WORKS JUST BUY YOUR OWN MAP
-    console.log(street_address);
     fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(street_address)}`)
         .then(response => response.json())
         .then(data => {
@@ -275,8 +318,6 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
                             .bindPopup("Þú ert hér")
                             .openPopup();
                     }
-                    console.log(lat, lon);
-                    console.log(userCoordinates);
                     const distance = getDistanceFromUser(lat, lon).toFixed(2) + ' km'
                     const distanceElement = document.createElement('p');
                     if (distance === 'Infinity km') {
@@ -306,80 +347,77 @@ closeUpItems.forEach((item) => {
 
         const street_address = item.dataset.street_address;
 
-        openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
+        opencloseup(name, city, openingHours, minAge, activities, facilities, street_address);
     });
 });
 
 
-const closeCloesup = () => {
+const closecloseup = () => {
     closeup.classList.add("hidden");
     overlay.classList.add("hidden");
 };
   
-if (closeCloesupBtn) {
-    closeCloesupBtn.addEventListener("click", closeCloesup);
+if (closecloseupBtn) {
+    closecloseupBtn.addEventListener("click", closecloseup);
 }
   
-  overlay.addEventListener("click", closeCloesup);
+  overlay.addEventListener("click", closecloseup);
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !closeup.classList.contains("hidden")) {
-        closeCloesup();
+        closecloseup();
     }
   });
-  //
 
 
 
-  const renderItems = (items) => {
+
+const renderItems = (items) => {
     return items
-        .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) =>
-            `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
+        .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) => {
+            const availableActivities = activities.filter(activity => activity.is_available).map(activity => activity.name);
+            return `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${availableActivities.join(', ')}" data-facilities="${facilities.join(', ')}">
                 <h3>${name}</h3>
                 <p><strong>Baearfelag:</strong> ${city}</p>
                 <p><strong>Opnunartímar:</strong> ${opening_hours}</p>
-                <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
-            </li>`
-        )
+                <img src="/static/${image_path}" alt="${name}" style="width: auto; height: auto; display: block; margin: auto; border: 3px solid #0f2027;">
+            </li>`;
+        })
         .join('');
 };
 
 const updateDisplay = async () => {
     const items = await getItems();
-    console.log(items);
     if (items && items.length > 0) {
         const selectedActivities = activitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
         const selectedCities = CitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
         let sortedItems = items;
-        console.log("BEFORE THE THINGY",userCoordinates);
         if (sortingAB) {
             const sortedItems = items.sort(customSortAB);
-            console.log(sortedItems);
         } else if (sortingGIO && userCoordinates) {
-            console.log("START SORTING GIO")
             sortedItems = sortedItems.filter(item => item.latitude && item.longitude)
             .sort((a, b) => {
                 const distanceA = getDistanceFromUser(a.latitude, a.longitude);
                 const distanceB = getDistanceFromUser(b.latitude, b.longitude);
-                console.log('Distances:', distanceA, distanceB);
                 return distanceA - distanceB;
             });
         }
 
         sortedItems = sortedItems.filter(item => {
             const matchescity = selectedCities.length === 0 || selectedCities.includes(item.city);
-            const matchesActivities = selectedActivities.every(activities => item.activities.is_available[activities]);
-            const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-            const matchesFacilities = selectedFacilities.every(facility => item.facilities.is_available[facility]);
-            return matchesActivities && matchescity && matchesFacilities;
+            const matchesActivities = selectedActivities.every(activity => 
+                item.activities.some(a => a.name === activity && a.is_available)
+            );            const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+            const matchesFacilities = selectedFacilities.every(facility => 
+                item.facilities.includes(facility)
+            );            return matchesActivities && matchescity && matchesFacilities;
         
         });
 
         const content = document.querySelector('#content');
         content.innerHTML = `<ul>${renderItems(sortedItems)}</ul>`;
 
-        //this is from old code
         const closeUpItems = document.querySelectorAll('.closeUp-item');
         closeUpItems.forEach((item) => {
             item.addEventListener('click', () => {
@@ -390,19 +428,15 @@ const updateDisplay = async () => {
                 const activities = item.dataset.activities;
                 const facilities = item.dataset.facilities;
                 const street_address = item.dataset.streetAddress;
-                console.log(street_address);
-                console.log(item);
+
         
-                openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
+                opencloseup(name, city, openingHours, minAge, activities, facilities, street_address);
             });
         });
-    } else {
-        console.error('No items to display');
     }
 };
 
 const getUserLocation = () => {
-    console.log("test");
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -410,7 +444,6 @@ const getUserLocation = () => {
                     latitude: position.coords.latitude,
                 longitude: position.coords.longitude
                 };
-                console.log(userCoordinates);
             },
         );
     }
@@ -422,7 +455,6 @@ const getUserLocation = () => {
 
 const getDistanceFromUser = (lat2, lon2) => {
     if (!userCoordinates || lat2 === undefined || lon2 === undefined) {
-        console.warn('STUCK FUCLKING IF SEE THIS MEANS CANT SEE THE OBJECTS CORDS OR USERS', { userCoordinates, lat2, lon2 });
         sortingAB = true
         sortingGIO = false
         return Infinity;
@@ -433,7 +465,6 @@ const getDistanceFromUser = (lat2, lon2) => {
 
 
     if (lat1 === undefined || lon1 === undefined || lat2 === undefined || lon2 === undefined) {
-        console.warn('One of the coordinates is undefined:', { lat1, lon1, lat2, lon2 });
         return Infinity;
     }
 
@@ -448,7 +479,6 @@ const getDistanceFromUser = (lat2, lon2) => {
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
-    console.log(`Distance from user to target: ${distance} km`);
     return distance;
 };
 
