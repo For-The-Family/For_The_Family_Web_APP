@@ -1,16 +1,18 @@
-const vmodal = document.getElementById("item-modal");
-const overlay = document.getElementById("overlay");
+const vmodal = document.getElementById("item-closeup");
 const root = document.getElementById("root");
 const modal = document.querySelector("#modal");
 const openModal = document.querySelector(".open-button");
 const closeModal = document.querySelector(".close-button");
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-
+const closeup = document.getElementById("item-closeup");
+const overlay = document.getElementById("overlay");
+const openCloesupBtn = document.querySelector(".btn-open");
+const closeCloesupBtn = document.querySelector(".btn-close");
 
 let activitiesCheckboxes = [];
 let CitiesCheckboxes = [];
+let facilitiesCheckboxes = [];
 let userCoordinates = null;
 
 
@@ -224,17 +226,127 @@ async function createfacilitiesCheckboxes() {
     });
 }
 
-let facilitiesCheckboxes = [];
 
-const renderItems = (items) => {
+
+
+// start working 3:30 pm but i am sick so i will be slower i think
+
+// first started to switch it to icelandic finished 3:55 pm and noticed forgot to make a project /:
+
+// 3:55 pm started to make the Filter work... 4:30 pm There is no why I can fix this the SQL is the issue I have no idea how I can fix it
+
+// 8:30 started compining the code
+
+const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
+    
+
+    const contentHTML = `
+        <h3>${name}</h3>
+        <p><strong>Baearfelag:</strong> ${city}</p>
+        <p><strong>Opnunartímar:</strong> ${openingHours}</p>
+        <p><strong>Lágmarksaldur:</strong> ${minAge}</p>
+        <p><strong>Götuheiti:</strong> ${street_address}</p>
+        <p><strong>Virkni:</strong> ${activities}</p>
+        <p><strong>Aðstaða:</strong> ${facilities}</p>
+        <div id="map" class="map-container"></div>
+    `;
+
+    closeup.innerHTML = contentHTML;
+    closeup.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+
+    var map = L.map('map').setView([0, 0], 12);
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    getUserLocation()
+
+
+
+// THIS FEELS LIKE SPAGHETTI CODE BUT IT WORKS JUST BUY YOUR OWN MAP
+    console.log(street_address);
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(street_address)}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.length > 0) {
+                var lat = data[0].lat;
+                var lon = data[0].lon;
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup("Götuheiti: " + street_address)
+                    .openPopup();
+                    if (userCoordinates) {
+                        L.marker([userCoordinates.latitude, userCoordinates.longitude]).addTo(map)
+                            .bindPopup("Þú ert hér")
+                            .openPopup();
+                    }
+                    console.log(lat, lon);
+                    console.log(userCoordinates);
+                    const distance = getDistanceFromUser(lat, lon).toFixed(2) + ' km'
+                    const distanceElement = document.createElement('p');
+                    if (distance === 'Infinity km') {
+                        distanceElement.innerHTML = `<strong>Fjarlægð frá þér:</strong> Get ekki fundið eða slökkt`;
+                    } else {
+                        distanceElement.innerHTML = `<strong>Fjarlægð frá þér:</strong> ${distance}`;
+                    }
+                    closeup.appendChild(distanceElement);
+            } else {
+                const distanceElement = document.createElement('p');
+                distanceElement.innerHTML = `<strong>Götuheiti ekki fundið`;
+                closeup.appendChild(distanceElement);
+
+            }
+        })
+};
+
+const closeUpItems = document.querySelectorAll('.closeUp-item');
+closeUpItems.forEach((item) => {
+    item.addEventListener('click', () => {
+        const name = item.dataset.name;
+        const city = item.dataset.city;
+        const openingHours = item.dataset.openingHours;
+        const minAge = item.dataset.minAge;
+        const activities = item.dataset.activities;
+        const facilities = item.dataset.facilities;
+
+        const street_address = item.dataset.street_address;
+
+        openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
+    });
+});
+
+
+const closeCloesup = () => {
+    closeup.classList.add("hidden");
+    overlay.classList.add("hidden");
+};
+  
+if (closeCloesupBtn) {
+    closeCloesupBtn.addEventListener("click", closeCloesup);
+}
+  
+  overlay.addEventListener("click", closeCloesup);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !closeup.classList.contains("hidden")) {
+        closeCloesup();
+    }
+  });
+  //
+
+
+
+  const renderItems = (items) => {
     return items
-        .map(({ name, city, OpeningHours, MinimumAge, image_path, Activities, facilities }) =>
-            `<li class="coaster-item">
+        .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) =>
+            `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
                 <h3>${name}</h3>
+                <p><strong>Baearfelag:</strong> ${city}</p>
+                <p><strong>Opnunartímar:</strong> ${opening_hours}</p>
                 <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
             </li>`
         )
-
         .join('');
 };
 
@@ -246,15 +358,16 @@ const updateDisplay = async () => {
         const selectedCities = CitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
         let sortedItems = items;
+        console.log("BEFORE THE THINGY",userCoordinates);
         if (sortingAB) {
             const sortedItems = items.sort(customSortAB);
             console.log(sortedItems);
         } else if (sortingGIO && userCoordinates) {
             console.log("START SORTING GIO")
-            sortedItems = sortedItems.filter(item => item.Location && item.Location.GeoLocation)
+            sortedItems = sortedItems.filter(item => item.latitude && item.longitude)
             .sort((a, b) => {
-                const distanceA = getDistanceFromUser(a.Location.GeoLocation);
-                const distanceB = getDistanceFromUser(b.Location.GeoLocation);
+                const distanceA = getDistanceFromUser(a.latitude, a.longitude);
+                const distanceB = getDistanceFromUser(b.latitude, b.longitude);
                 console.log('Distances:', distanceA, distanceB);
                 return distanceA - distanceB;
             });
@@ -262,14 +375,33 @@ const updateDisplay = async () => {
 
         sortedItems = sortedItems.filter(item => {
             const matchescity = selectedCities.length === 0 || selectedCities.includes(item.city);
-            const matchesActivities = selectedActivities.every(activities => item.activities[activities]);
+            const matchesActivities = selectedActivities.every(activities => item.activities.is_available[activities]);
             const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-            const matchesFacilities = selectedFacilities.every(facility => item.facilities[facility]);
+            const matchesFacilities = selectedFacilities.every(facility => item.facilities.is_available[facility]);
             return matchesActivities && matchescity && matchesFacilities;
+        
         });
 
         const content = document.querySelector('#content');
         content.innerHTML = `<ul>${renderItems(sortedItems)}</ul>`;
+
+        //this is from old code
+        const closeUpItems = document.querySelectorAll('.closeUp-item');
+        closeUpItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const name = item.dataset.name;
+                const city = item.dataset.city;
+                const openingHours = item.dataset.openingHours;
+                const minAge = item.dataset.minAge;
+                const activities = item.dataset.activities;
+                const facilities = item.dataset.facilities;
+                const street_address = item.dataset.streetAddress;
+                console.log(street_address);
+                console.log(item);
+        
+                openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
+            });
+        });
     } else {
         console.error('No items to display');
     }
@@ -285,7 +417,6 @@ const getUserLocation = () => {
                 longitude: position.coords.longitude
                 };
                 console.log(userCoordinates);
-                updateDisplay();
             },
         );
     }
@@ -295,19 +426,17 @@ const getUserLocation = () => {
     }
 };
 
-const getDistanceFromUser = (targetCoordinates) => {
-    if (!userCoordinates || !targetCoordinates) {
-        console.warn('STUCK FUCLKING IF SEE THIS MEANS CANT SEE THE OBJECTS CORDS OR USERS', { userCoordinates, targetCoordinates });
+const getDistanceFromUser = (lat2, lon2) => {
+    if (!userCoordinates || lat2 === undefined || lon2 === undefined) {
+        console.warn('STUCK FUCLKING IF SEE THIS MEANS CANT SEE THE OBJECTS CORDS OR USERS', { userCoordinates, lat2, lon2 });
         sortingAB = true
         sortingGIO = false
-        updateDisplay();
         return Infinity;
     }
 
     const lat1 = userCoordinates.latitude;
     const lon1 = userCoordinates.longitude;
-    const lat2 = targetCoordinates.Latitude;
-    const lon2 = targetCoordinates.Longitude;
+
 
     if (lat1 === undefined || lon1 === undefined || lat2 === undefined || lon2 === undefined) {
         console.warn('One of the coordinates is undefined:', { lat1, lon1, lat2, lon2 });
