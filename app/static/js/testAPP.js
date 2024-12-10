@@ -280,7 +280,7 @@ const opencloseup = (name, city, openingHours, minAge, activities, facilities, s
         <p><strong>Opnunartímar:</strong> ${openingHours}</p>
         <p><strong>Lágmarksaldur:</strong> ${minAge}</p>
         <p><strong>Götuheiti:</strong> ${street_address}</p>
-        <p><strong>Virkni:</strong> ${uniqueActivities.join(', ') || 'Engin virkni í boði'}</p>
+        ${uniqueActivities.length > 1 ? `<p><strong>Virkni:</strong> ${uniqueActivities.join(', ')}</p>` : ''}
         <p><strong>Aðstaða:</strong> ${facilities || 'Food & Drinks, Parking, Toilets'}</p>
         <div id="map" class="map-container"></div>
     `;
