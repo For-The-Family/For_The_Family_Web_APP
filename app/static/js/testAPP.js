@@ -1,8 +1,6 @@
 const vmodal = document.getElementById("item-closeup");
 const root = document.getElementById("root");
-const modal = document.querySelector("#modal");
-const openModal = document.querySelector(".open-button");
-const closeModal = document.querySelector(".close-button");
+
 var coll = document.getElementsByClassName("collapsible");
 
 const closeup = document.getElementById("item-closeup");
@@ -62,18 +60,7 @@ const customSortAB = (a, b) => {
 };
 
 
-openModal.addEventListener('click', () => { 
-    if (modal && typeof modal.showModal === 'function') {
-        modal.showModal();
-    }
-});
 
-
-closeModal.addEventListener('click', () => {
-    if (modal && typeof modal.close === 'function') {
-        modal.close();
-    }
-});
 
 
 
