@@ -74,24 +74,39 @@
                 hx-swap="innerHTML">
                     Grunnskólar
                 </button>
-                <div id="root">
-                    <button 
-                        type="button" 
-                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-1 rounded-lg border-4 border-gray "
-                        >Bæjarfelag Filters</button>
-                    <div class="content-col" id="city-filters"></div>
+                <div class="grid grid-cols-3 gap-4 p-4">
+                    <div>
+                        <button 
+                            type="button" 
+                            class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                            >Bæjarfelag Filters</button>
+                        <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="city-filters">
+                            <!-- Content for city filters goes here -->
+                            <p>City Filter Content</p>
+                        </div>
+                    </div>
                 
-                    <button 
-                        type="button" 
-                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-1 rounded-lg border-4 border-gray"
-                        >Virkni Filters</button>
-                    <div class="content-col" id="activity-filters"></div>
+                    <div>
+                        <button 
+                            type="button" 
+                            class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                            >Virkni Filters</button>
+                        <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="activity-filters">
+                            <!-- Content for activity filters goes here -->
+                            <p>Activity Filter Content</p>
+                        </div>
+                    </div>
                 
-                    <button 
-                        type="button"
-                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-1 rounded-lg border-4 border-gray"
-                        >Aðstaða Filters</button>
-                    <div class="content-col" id="facility-filters"></div>
+                    <div>
+                        <button 
+                            type="button"
+                            class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                            >Aðstaða Filters</button>
+                        <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="facility-filters">
+                            <!-- Content for facility filters goes here -->
+                            <p>Facility Filter Content</p>
+                        </div>
+                    </div>
                 </div>
     </header>
 

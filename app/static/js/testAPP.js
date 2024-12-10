@@ -7,8 +7,8 @@ var coll = document.getElementsByClassName("collapsible");
 
 const closeup = document.getElementById("item-closeup");
 const overlay = document.getElementById("overlay");
-const openCloesupBtn = document.querySelector(".btn-open");
-const closeCloesupBtn = document.querySelector(".btn-close");
+const opencloseupBtn = document.querySelector(".btn-open");
+const closecloseupBtn = document.querySelector(".btn-close");
 
 let activitiesCheckboxes = [];
 let CitiesCheckboxes = [];
@@ -92,7 +92,12 @@ const getItems = async () => {
     try {
         const response = await fetch('test_js/all');
         const data = await response.json();
-        return data;
+        data.forEach(kindergarten => {
+            console.log(`Kindergarten: ${kindergarten.name}`);
+            kindergarten.activities.forEach(activity => {
+                console.log(`Activity: ${activity.name}, Available: ${activity.is_available}`);
+            });
+        });        return data;
     } catch (error) {
         console.error('Failed to load data', error);
         document.querySelector('#message').innerText = 'Failed to load';
@@ -155,27 +160,29 @@ async function createcityCheckboxes() {
 
 async function createActivityCheckboxes() {
     const items = await getItems();
-    const activities = items.reduce((acc, item) => {
+    
+    // Collect unique activity names
+    const uniqueActivities = new Set();
+    items.forEach(item => {
         item.activities.forEach(activity => {
-            if (!acc.includes(activity)) {
-                console.log(activity);
-                acc.push(activity);
-            }
+            uniqueActivities.add(activity.name);
         });
-        return acc;
-    }, []);
+    });
 
     const activityContainer = document.getElementById("activity-filters");
 
-    activities.forEach(activities => {
+    // Create checkboxes for each unique activity name
+    uniqueActivities.forEach(activityName => {
+        console.log(`Activity: ${activityName}`);
+
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
-        checkbox.id = activities;
-        checkbox.value = activities;
+        checkbox.id = activityName;
+        checkbox.value = activityName;
 
         let label = document.createElement("label");
-        label.htmlFor = activities;
-        label.innerText = activities;
+        label.htmlFor = activityName;
+        label.innerText = activityName;
 
         activityContainer.appendChild(checkbox);
         activityContainer.appendChild(label);
@@ -229,12 +236,19 @@ async function createfacilitiesCheckboxes() {
 
 // 3:55 pm started to make the Filter work... 4:30 pm There is no why I can fix this the SQL is the issue I have no idea how I can fix it
 
-// 8:30 started compining the code
+// 8:30 pm started compining the code
 
-// 9
+// 10:30 pm We ended since Jon had to go we would start at 8 tmr at school so we can finish the project
 
-const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
-    
+// 8:20 am started to work on the project again
+
+// 10:20 am The others have left me i am still working
+
+const opencloseup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
+    console.log('Activities (raw):', activities);
+
+    // Ensure activities is a string or an array before proceeding
+    const uniqueActivities = [...new Set(activities.split(', ').map(item => item.trim()))];
 
     const contentHTML = `
         <h3>${name}</h3>
@@ -242,10 +256,14 @@ const openCloesup = (name, city, openingHours, minAge, activities, facilities, s
         <p><strong>Opnunartímar:</strong> ${openingHours}</p>
         <p><strong>Lágmarksaldur:</strong> ${minAge}</p>
         <p><strong>Götuheiti:</strong> ${street_address}</p>
-        <p><strong>Virkni:</strong> ${activities}</p>
-        <p><strong>Aðstaða:</strong> ${facilities}</p>
+        <p><strong>Virkni:</strong> ${uniqueActivities.join(', ') || 'Engin virkni í boði'}</p>
+        <p><strong>Aðstaða:</strong> ${facilities || 'Engin aðstaða í boði'}</p>
         <div id="map" class="map-container"></div>
     `;
+
+    closeup.innerHTML = contentHTML;
+    closeup.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 
     closeup.innerHTML = contentHTML;
     closeup.classList.remove("hidden");
@@ -308,41 +326,42 @@ closeUpItems.forEach((item) => {
 
         const street_address = item.dataset.street_address;
 
-        openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
+        opencloseup(name, city, openingHours, minAge, activities, facilities, street_address);
     });
 });
 
 
-const closeCloesup = () => {
+const closecloseup = () => {
     closeup.classList.add("hidden");
     overlay.classList.add("hidden");
 };
   
-if (closeCloesupBtn) {
-    closeCloesupBtn.addEventListener("click", closeCloesup);
+if (closecloseupBtn) {
+    closecloseupBtn.addEventListener("click", closecloseup);
 }
   
-  overlay.addEventListener("click", closeCloesup);
+  overlay.addEventListener("click", closecloseup);
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && !closeup.classList.contains("hidden")) {
-        closeCloesup();
+        closecloseup();
     }
   });
   //
 
 
 
-  const renderItems = (items) => {
+const renderItems = (items) => {
     return items
-        .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) =>
-            `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${activities.join(', ')}" data-facilities="${facilities.join(', ')}">
+        .map(({ name, city, opening_hours, minimum_age, image_path, activities, facilities, street_address }) => {
+            const availableActivities = activities.filter(activity => activity.is_available).map(activity => activity.name);
+            return `<li class="closeUp-item" data-street-address="${street_address}" data-name="${name}" data-city="${city}" data-opening-hours="${opening_hours}" data-min-age="${minimum_age}" data-activities="${availableActivities.join(', ')}" data-facilities="${facilities.join(', ')}">
                 <h3>${name}</h3>
                 <p><strong>Baearfelag:</strong> ${city}</p>
                 <p><strong>Opnunartímar:</strong> ${opening_hours}</p>
                 <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
-            </li>`
-        )
+            </li>`;
+        })
         .join('');
 };
 
@@ -371,9 +390,10 @@ const updateDisplay = async () => {
 
         sortedItems = sortedItems.filter(item => {
             const matchescity = selectedCities.length === 0 || selectedCities.includes(item.city);
-            const matchesActivities = selectedActivities.every(activities => item.activities.is_available[activities]);
-            const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-            const matchesFacilities = selectedFacilities.every(facility => item.facilities.is_available[facility]);
+            const matchesActivities = selectedActivities.every(activity => 
+                item.activities.some(a => a.name === activity && a.is_available)
+            );            const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+            const matchesFacilities = selectedFacilities.every(facility => item.facilities.some(f => f === facility && f.is_available));
             return matchesActivities && matchescity && matchesFacilities;
         
         });
@@ -395,7 +415,7 @@ const updateDisplay = async () => {
                 console.log(street_address);
                 console.log(item);
         
-                openCloesup(name, city, openingHours, minAge, activities, facilities, street_address);
+                opencloseup(name, city, openingHours, minAge, activities, facilities, street_address);
             });
         });
     } else {
