@@ -31,13 +31,19 @@
 
 <img src="./Images/kindergarten_Simple.png">
 
-  * Eftir uppsetningu :
+  * Eftir uppsetningu á síðunni:
 <img src="./Images/ftf1.png">
 <img src="./Images/ftf2.png">
 <img src="./Images/ftf3.png">
 <img src="./Images/ftf4.png">
 <img src="./Images/ftf5.png">
 <img src="./Images/ftffilters.png">
+
+# gagnagruns meðhöndlun.
+  * SQL-server var notaður til þess að hýsa upplýsingar í gegnum PostGRES
+  * hér fyrir neðan má sjá mynd af sambands tenginum í gagnasafninu.
+
+<img src="./Images/TableRelationship.png">
 
 # Source Material
  * https://reykjavik.is/allir-leikskolar
