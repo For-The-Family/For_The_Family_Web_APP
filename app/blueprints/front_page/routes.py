@@ -7,4 +7,3 @@ from . import front_page_bp
 @front_page_bp.route('/')
 def home():
     return render_template('index.html')
-

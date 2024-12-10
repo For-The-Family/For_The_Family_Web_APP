@@ -68,11 +68,15 @@ openModal.addEventListener('click', () => {
     }
 });
 
+
 closeModal.addEventListener('click', () => {
     if (modal && typeof modal.close === 'function') {
         modal.close();
     }
 });
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

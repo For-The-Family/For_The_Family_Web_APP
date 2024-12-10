@@ -18,6 +18,38 @@
     </head>
     
     <header>
+        <div id="root">
+            <dialog id="modal" open class="bg-white rounded-full shadow-lg grid text-center mx-auto p-8 fixed inset-0 w-2/3 max-wl h-98 modal">
+                <div class="order-first">
+                    <h2 class="mb-5 mt-10 text-3xl font-bold">
+                        Leiksvæði og veitingastaðir
+                    </h2>
+                    <h3 class="mb-5 text-xl font-semibold text-white-100">
+                        Findu það sem þig vantar.. Núna!
+                    </h3>
+                    <p class="mb-4 text-black-700 leading-relaxed">
+                    Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                    eina sem þú gerir á okkar síðu
+                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.+
+                    </p>
+                </div>
+                <div class="order-2">
+                    <p class="mb-4 text-black-700 leading-relaxed">Fyrir fram þakkir ♡ </p>
+                </div>
+                <div class="order-last mt-8">
+                    <button class="bg-green-500 hover:bg-green-700 font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-green-300 btn-close">
+                        OK
+                    </button>
+                </div>            
+                </dialog>
+            <div id="content"></div>
+            <p id="message"></p>
+            <p id="loading"></p>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden"></div>
+        
         <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
         
         <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
@@ -25,7 +57,7 @@
             <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
             <button
                 class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
-                hx-get="/leiksvaedi" 
+                hx-get="c:\Users\dilja\Documents\Skólinn\hopaverkefni\For_The_Family_Web_APP\app\templates\play_areas\index.html" 
                 hx-target="#content"
                 gx-swap="innerHTML">
                 Leiksvæði
@@ -46,7 +78,29 @@
             <div id="content"></div>
         </div>
     </body>
-    <footer class="grid-cols-1 ml-5" >
-        <h6>Verkefni eftir : Diljá, Jón & Örn.</h6>
+    <footer class="ml-5 mt-4" >
+        <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
     </footer>
 </html>
+<script>
+    const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const closeModalBtn = document.querySelector(".btn-close");
+
+// close modal function
+const closeModal = function () {
+modal.classList.add("hidden");
+overlay.classList.add("hidden");
+};
+
+// close the modal when the close button and overlay is clicked
+closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// close modal when the Esc key is pressed
+document.addEventListener("keydown", function (e) {
+if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+closeModal();
+}
+});
+</script>

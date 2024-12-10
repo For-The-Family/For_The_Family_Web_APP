@@ -38,3 +38,5 @@
   til þess að vinna með og stæka í framtíðinni.
 - Gagnagrunurinn verður með mestum líkindum Firebase-RTDB eða SQL-DB, er ekki 100% ákveðið ennþá.
 - fyrir CSS munum vera notað Windtail, þar sem það lítur út fyrir að vera einfalt og auðvelt að læra og er mjög nútímalekt.
+
+2024 Asmodeus, Diljá, Örn - VEFÞ3VÞ05DU-HÁT <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
