@@ -37,6 +37,7 @@
 <img src="./Images/ftf3.png">
 <img src="./Images/ftf4.png">
 <img src="./Images/ftf5.png">
+<img src="./Images/ftffilters.png">
 
 # Source Material
  * https://reykjavik.is/allir-leikskolar
