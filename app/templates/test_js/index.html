@@ -2,6 +2,11 @@
 <html lang="en">
 
     <head>
+        <title>play_Areas Home</title>
+        <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Offside&family=Playpen+Sans:wght@100..800&display=swap"rel="stylesheet">
@@ -12,13 +17,12 @@
         crossorigin=""/>
         
 
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
         <title>Who Would Read This?, I would read this!</title>
         <script src="../../static/js/testAPP.js" defer></script>
-        
+        <link rel="stylesheet" href="../../static/css/testCSS.css">
     </head>
     <header>
         <div class="menu-container">
@@ -29,29 +33,83 @@
                 <li><a href="{{ url_for('test_css.index') }}">CSS Testing</a></li>
             </menu>
 
-            <ul class="right-links">
-            </ul>
         </div>
+
+        <nav class="grid rounded-full grid-cols-2 gap-50 w-99 my-10 mx-3">
+            <button class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-3 rounded-full  shadow-2xl"
+                hx-get="/homePage"
+                hx-target="#content-body"
+                hx-swap="innerHTML">
+                HomePage
+            </button>
+            <button class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-3 rounded-full  shadow-2xl"
+                hx-get="/veitingastaðir"
+                hx-target="#content-body"
+                hx-swap="innerHTML">
+                veitingastaðir
+            </button>
+        </nav>
+        
+            <div class="grid rounded-full grid-cols-3 w-99 my-10 mx-3">
+                <!--Vantar route fyrir að sínir rétta data-->
+                <button class="bg-orange-500 hover:bg-orange-700 text-white text-2xl font-bold py-10 px-9 rounded-full  shadow-2xl"
+                hx-get="/Leiksvæði"
+                hx-target="#content-body"
+                hx-swap="innerHTML">
+                    Leiksvæði
+                </button>
+                <!--Vantar route fyrir að sínir rétta data-->
+                <button class="bg-purple-500 hover:bg-purple-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                    hx-get="/Leiksólar"
+                    hx-target="#content-body"
+                    hx-swap="innerHTML">
+                    Leikskólar
+                </button>
+                <!--Vantar route fyrir að sínir rétta data-->
+                <button class="bg-yellow-500 hover:bg-yellow-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                hx-get="Grunnskólar"
+                hx-target="#content-body"
+                hx-swap="innerHTML">
+                    Grunnskólar
+                </button>
+            </div>
+            <div class="grid grid-cols-3 gap-4 p-4">
+                <div>
+                    <button 
+                        type="button" 
+                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                        >Bæjarfelag Filters</button>
+                    <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="city-filters">
+                        <p>City Filter Content</p>
+                    </div>
+                </div>
+            
+                <div>
+                    <button 
+                        type="button" 
+                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                        >Virkni Filters</button>
+                    <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="activity-filters">
+                        <p>Activity Filter Content</p>
+                    </div>
+                </div>
+            
+                <div>
+                    <button 
+                        type="button" 
+                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                        >Aðstaða Filters</button>
+                    <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="facility-filters">
+                        <p>Facility Filter Content</p>
+                    </div>
+                </div>
+            </div>
+
+            
     </header>
 
     <body>    
         <div id="root">
-            <button class="button open-button"></button>
-            <dialog open class="modal" id="modal">
-                <h2>
-                    Leiksvæði og veitingastaðir
-                   </h2>
-                   <h3>Findu það sem þig vantar..</h3>
-                   <h3>Núna!</h3>
-                   <p>Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
-                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
-                    eina sem þú gerir á okkar síðu
-                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.</p>
-            
-                    <p>Fyrir fram þakkir ♡ </p>
-            
-                    <button class="button close-button">OK</button>
-                </dialog>
             <div id="content"></div>
             <p id="message"></p>
             <p id="loading"></p>
@@ -61,18 +119,24 @@
         <section id="item-closeup" class="closeup hidden"></section>
         <div id="map" class="map-container hidden"></div>
 
-
+        <button class="button open-button"></button>
+        <dialog open class="modal" id="modal">
+            <h2>
+                Leiksvæði og veitingastaðir
+               </h2>
+               <h3>Findu það sem þig vantar..</h3>
+               <h3>Núna!</h3>
+               <p>Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                eina sem þú gerir á okkar síðu
+                sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.</p>
+        
+                <p>Fyrir fram þakkir ♡ </p>
+        
+                <button class="button close-button">OK</button>
+            </dialog>
         
     </body>
-    <div id="root">
-        <button type="button" class="collapsible">Baearfelag Filters</button>
-        <div class="content-col" id="city-filters"></div>
-    
-        <button type="button" class="collapsible">Virkni Filters</button>
-        <div class="content-col" id="activity-filters"></div>
-    
-        <button type="button" class="collapsible">Aðstaða Filters</button>
-        <div class="content-col" id="facility-filters"></div>
-    </div>
+
 
 </html>

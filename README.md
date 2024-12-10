@@ -1,4 +1,5 @@
 # For The Family
+  -link on page <--vantar.
 
 ## Vefsíðu Virkni :
 - ### Hver notar síðuna:
@@ -38,3 +39,11 @@
   til þess að vinna með og stæka í framtíðinni.
 - Gagnagrunurinn verður með mestum líkindum Firebase-RTDB eða SQL-DB, er ekki 100% ákveðið ennþá.
 - fyrir CSS munum vera notað Windtail, þar sem það lítur út fyrir að vera einfalt og auðvelt að læra og er mjög nútímalekt.
+
+# Framhald og óklárað efni:
+- Óklárað flokkar s.s Grunnskólar og Leiksvæði.
+- Bæta við Veitingastöðum og öllu sem tengst því.
+- Bæta við afreyingar stöðum í bæjarfélögum fyrir fjölskyldur.
+- Og margt fleira sem hugmyndar flugið leyfir!
+
+&copy; Haust:2024. Asmodeus, Diljá, Örn - VEFÞ3VÞ05DU-HÁT - Tölvubraut - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a>
