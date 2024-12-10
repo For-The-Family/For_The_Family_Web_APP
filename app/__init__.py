@@ -9,6 +9,7 @@ from .blueprints.front_page.routes import front_page_bp
 from .blueprints.test_js.routes import test_js_bp
 from .blueprints.test_css.routes import test_css_bp
 from .blueprints.test_sql.routes import test_sql_bp
+from .blueprints.play_areas.routes import play_areas_bp
 from .blueprints.play_areas.kindergartens.routes import kindergartens_bp
 from .blueprints.play_areas.gradeschools.routes import gradeschools_bp
 from .blueprints.play_areas.playgrounds.routes import playgrounds_bp
@@ -26,6 +27,7 @@ def create_app():
     app.register_blueprint(test_js_bp, url_prefix='/test_js')
     app.register_blueprint(test_css_bp, url_prefix='/test_css')
     app.register_blueprint(test_sql_bp, url_prefix='/test_sql')
+    app.register_blueprint(play_areas_bp, url_prefix='/play_areas')
     app.register_blueprint(kindergartens_bp, url_prefix='/kindergartens')
     app.register_blueprint(gradeschools_bp, url_prefix='/gradeschools')
     app.register_blueprint(playgrounds_bp, url_prefix='/playgrounds')

@@ -5,7 +5,7 @@ from flask import Blueprint
 # Initialize the blueprint
 test_js_bp = Blueprint(
     'test_js', __name__,
-    template_folder='../templates',  # Adjust path if needed
+    template_folder='../../templates',  # Adjust path if needed
     static_folder='../../static'
 )
 

@@ -6,7 +6,7 @@ from . import kindergartens_bp
 # Route definitions for front_page
 @kindergartens_bp.route('/')
 def index():
-    return render_template('play_areas/kindergartens/index.html')
+    return render_template('index.html')
 # Connection Function
 # zeh connecty boyyyy
 def get_db_connection():
@@ -21,7 +21,7 @@ def get_db_connection():
 
 
 # Route to handle search queries
-@kindergartens_bp.route('play_areas/kindergartens/search', methods=['GET'])
+@kindergartens_bp.route('/search', methods=['GET'])
 def search():
     pattern = request.args.get('q', '')
     query = """SELECT id, name, city, street_address, opening_hours 
@@ -49,7 +49,7 @@ def search():
         return jsonify({"error": str(e)}), 500
 
 # Route to fetch details of a specific kindergarten
-@kindergartens_bp.route('play_areas/kindergartens/<int:kindergarten_id>', methods=['GET'])
+@kindergartens_bp.route('/<int:kindergarten_id>', methods=['GET'])
 def kindergarten_details(kindergarten_id):
     query = """SELECT k.name, k.city, k.street_address, k.postal_code, 
                       k.opening_hours, k.minimum_age, k.image_path,

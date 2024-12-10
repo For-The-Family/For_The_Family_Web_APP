@@ -7,10 +7,10 @@ SELECT * FROM kindergartens;
 
 select k.*, a.activity_name, f.facility_name, ka.is_available, kf.is_available
 FROM kindergartens k
-JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
-JOIN activities a ON ka.activity_id = a.id
-JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
-JOIN facilities f ON kf.facility_id = f.id
+LEFT JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
+LEFT JOIN activities a ON ka.activity_id = a.id
+LEFT JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
+LEFT JOIN facilities f ON kf.facility_id = f.id
 GROUP BY k.id, a.activity_name, f.facility_name, ka.is_available, kf.is_available;
 
 /* #endregion */

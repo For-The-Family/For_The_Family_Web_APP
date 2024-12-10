@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
-        <title>Who Would Read This?, I would read this!</title>
+        <title>FTF - HOME</title>
         <!--windtail-->
         <script src="https://cdn.tailwindcss.com"></script>
         <!--HTMLX-->
@@ -57,7 +57,7 @@
             <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
             <button
                 class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
-                hx-get="\play_areas\index.html" 
+                hx-get="{{ url_for('play_areas.index')}}" 
                 hx-target="#content"
                 gx-swap="innerHTML">
                 Leiksvæði

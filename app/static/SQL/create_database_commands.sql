@@ -987,6 +987,7 @@ INSERT INTO kindergarten_activities (kindergarten_id, activity_id, is_available)
 
 /* #region Kindergarten facilities */
 
+
 INSERT INTO kindergarten_facilities (kindergarten_id, facility_id, is_available) VALUES
 (1, 2, TRUE),
 (1, 3, TRUE),
@@ -2035,6 +2036,530 @@ UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 
 UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 85 AND activity_id = 4;
 UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 85 AND activity_id = 3;
 UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 85 AND activity_id = 6;
+
+
+
+
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 86 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 86 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 86 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 86 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 86 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 86 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 86 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 86 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 86 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 87 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 87 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 87 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 87 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 87 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 87 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 87 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 87 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 87 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 88 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 88 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 88 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 90 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 90 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 90 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 91 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 91 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 91 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 91 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 91 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 91 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 91 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 91 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 91 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 92 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 92 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 92 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 93 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 93 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 93 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 94 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 94 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 94 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 94 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 94 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 94 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 94 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 94 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 94 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 95 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 95 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 95 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 95 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 95 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 95 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 95 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 95 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 95 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 96 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 96 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 96 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 96 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 96 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 96 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 96 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 96 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 96 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 97 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 98 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 98 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 98 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 98 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 98 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 98 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 98 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 98 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 98 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 99 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 99 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 99 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 99 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 99 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 99 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 99 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 99 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 99 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 100 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 100 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 100 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 100 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 100 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 100 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 100 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 100 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 100 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 101 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 101 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 101 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 101 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 101 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 101 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 101 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 101 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 101 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 102 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 102 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 102 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 104 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 104 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 104 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 105 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 105 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 105 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 106 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 106 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 107 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 107 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 108 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 108 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 108 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 108 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 108 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 108 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 108 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 108 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 108 AND activity_id = 6;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 109 AND activity_id = 5;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 109 AND activity_id = 9;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 109 AND activity_id = 1;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 109 AND activity_id = 2;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 109 AND activity_id = 8;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 109 AND activity_id = 7;
+UPDATE kindergarten_activities SET is_available = TRUE WHERE kindergarten_id = 109 AND activity_id = 4;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 109 AND activity_id = 3;
+UPDATE kindergarten_activities SET is_available = FALSE WHERE kindergarten_id = 109 AND activity_id = 6;
+
+
+
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 86 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 86 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 86 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 87 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 87 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 87 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 88 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 88 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 88 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 106 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 106 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 106 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 90 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 90 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 90 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 91 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 91 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 91 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 92 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 92 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 92 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 93 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 93 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 93 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 94 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 94 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 94 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 95 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 95 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 95 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 96 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 96 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 96 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 97 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 97 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 97 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 98 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 98 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 98 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 99 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 99 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 99 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 100 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 100 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 100 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 101 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 101 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 101 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 102 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 102 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 102 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 106 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 106 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 106 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 104 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 104 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 104 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 105 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 105 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 105 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 106 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 106 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 106 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 107 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 107 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 107 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 108 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 108 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 108 AND facility_id = 1;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 109 AND facility_id = 2;
+UPDATE kindergarten_facilities SET is_available = TRUE WHERE kindergarten_id = 109 AND facility_id = 3;
+UPDATE kindergarten_facilities SET is_available = FALSE WHERE kindergarten_id = 109 AND facility_id = 1;
+
+INSERT INTO kindergarten_facilities (kindergarten_id, facility_id, is_available) VALUES 
+(86, 2, TRUE),
+(86, 3, FALSE),
+(86, 1, TRUE),
+(87, 2, TRUE),
+(87, 3, TRUE),
+(87, 1, FALSE),
+(88, 2, TRUE),
+(88, 3, FALSE),
+(88, 1, FALSE),
+(106, 2, TRUE),
+(106, 3, FALSE),
+(106, 1, TRUE),
+(90, 2, TRUE),
+(90, 3, TRUE),
+(90, 1, TRUE),
+(91, 2, FALSE),
+(91, 3, TRUE),
+(91, 1, TRUE),
+(92, 2, TRUE),
+(92, 3, TRUE),
+(92, 1, TRUE),
+(93, 2, FALSE),
+(93, 3, FALSE),
+(93, 1, FALSE),
+(94, 2, TRUE),
+(94, 3, FALSE),
+(94, 1, FALSE),
+(95, 2, TRUE),
+(95, 3, FALSE),
+(95, 1, FALSE),
+(96, 2, FALSE),
+(96, 3, TRUE),
+(96, 1, FALSE),
+(97, 2, FALSE),
+(97, 3, FALSE),
+(97, 1, TRUE),
+(98, 2, TRUE),
+(98, 3, FALSE),
+(98, 1, TRUE),
+(99, 2, TRUE),
+(99, 3, FALSE),
+(99, 1, TRUE),
+(100, 2, TRUE),
+(100, 3, TRUE),
+(100, 1, TRUE),
+(101, 2, FALSE),
+(101, 3, TRUE),
+(101, 1, FALSE),
+(102, 2, FALSE),
+(102, 3, TRUE),
+(102, 1, TRUE),
+(104, 2, TRUE),
+(104, 3, FALSE),
+(104, 1, FALSE),
+(105, 2, FALSE),
+(105, 3, TRUE),
+(105, 1, TRUE),
+(107, 2, TRUE),
+(107, 3, FALSE),
+(107, 1, TRUE),
+(108, 2, FALSE),
+(108, 3, TRUE),
+(108, 1, FALSE),
+(109, 2, TRUE),
+(109, 3, TRUE),
+(109, 1, FALSE)
+ON CONFLICT (kindergarten_id, facility_id) 
+DO UPDATE SET is_available = EXCLUDED.is_available;
+
+
+INSERT INTO kindergarten_facilities (kindergarten_id, facility_id, is_available) VALUES 
+
+
+INSERT INTO kindergarten_activities (kindergarten_id, activity_id, is_available) VALUES 
+(86, 5, FALSE),
+(86, 9, FALSE),
+(86, 1, TRUE),
+(86, 2, TRUE),
+(86, 8, TRUE),
+(86, 7, FALSE),
+(86, 4, FALSE),
+(86, 3, TRUE),
+(86, 6, FALSE),
+(87, 5, FALSE),
+(87, 9, FALSE),
+(87, 1, TRUE),
+(87, 2, TRUE),
+(87, 8, TRUE),
+(87, 7, FALSE),
+(87, 4, FALSE),
+(87, 3, TRUE),
+(87, 6, FALSE),
+(88, 5, TRUE),
+(88, 9, FALSE),
+(88, 1, FALSE),
+(88, 2, FALSE),
+(88, 8, FALSE),
+(88, 7, FALSE),
+(88, 4, TRUE),
+(88, 3, FALSE),
+(88, 6, FALSE),
+(106, 5, FALSE),
+(106, 9, TRUE),
+(106, 1, TRUE),
+(106, 2, FALSE),
+(106, 8, TRUE),
+(106, 7, TRUE),
+(106, 4, TRUE),
+(106, 3, FALSE),
+(106, 6, FALSE),
+(90, 5, TRUE),
+(90, 9, TRUE),
+(90, 1, TRUE),
+(90, 2, TRUE),
+(90, 8, TRUE),
+(90, 7, TRUE),
+(90, 4, FALSE),
+(90, 3, TRUE),
+(90, 6, FALSE),
+(91, 5, FALSE),
+(91, 9, FALSE),
+(91, 1, FALSE),
+(91, 2, TRUE),
+(91, 8, FALSE),
+(91, 7, TRUE),
+(91, 4, TRUE),
+(91, 3, FALSE),
+(91, 6, FALSE),
+(92, 5, TRUE),
+(92, 9, FALSE),
+(92, 1, FALSE),
+(92, 2, TRUE),
+(92, 8, FALSE),
+(92, 7, FALSE),
+(92, 4, FALSE),
+(92, 3, FALSE),
+(92, 6, FALSE),
+(93, 5, TRUE),
+(93, 9, TRUE),
+(93, 1, TRUE),
+(93, 2, FALSE),
+(93, 8, TRUE),
+(93, 7, TRUE),
+(93, 4, TRUE),
+(93, 3, TRUE),
+(93, 6, FALSE)
+ON CONFLICT (kindergarten_id, activity_id) 
+DO UPDATE SET is_available = EXCLUDED.is_available;
+
+INSERT INTO kindergarten_activities (kindergarten_id, activity_id, is_available) VALUES 
+
+
+SELECT * 
+FROM kindergartens 
+WHERE id IN (86, 87, 88, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 104, 105, 106, 107, 108, 109);
+
+
+INSERT INTO kindergarten_facilities (kindergarten_id, facility_id, is_available) 
+VALUES 
+(86, 2, TRUE),
+(86, 3, FALSE),
+(86, 1, TRUE),
+(87, 2, TRUE),
+(87, 3, TRUE),
+(87, 1, FALSE),
+(88, 2, TRUE),
+(88, 3, FALSE),
+(88, 1, FALSE),
+(106, 2, TRUE),
+(106, 3, FALSE),
+(106, 1, TRUE),
+(90, 2, TRUE),
+(90, 3, TRUE),
+(90, 1, TRUE),
+(91, 2, FALSE),
+(91, 3, TRUE),
+(91, 1, TRUE),
+(92, 2, TRUE),
+(92, 3, TRUE),
+(92, 1, TRUE),
+(93, 2, FALSE),
+(93, 3, FALSE),
+(93, 1, FALSE),
+(94, 2, TRUE),
+(94, 3, FALSE),
+(94, 1, FALSE),
+(95, 2, TRUE),
+(95, 3, FALSE),
+(95, 1, FALSE),
+(96, 2, FALSE),
+(96, 3, TRUE),
+(96, 1, FALSE),
+(97, 2, FALSE),
+(97, 3, FALSE),
+(97, 1, TRUE),
+(98, 2, TRUE),
+(98, 3, FALSE),
+(98, 1, TRUE),
+(99, 2, TRUE),
+(99, 3, FALSE),
+(99, 1, TRUE),
+(100, 2, TRUE),
+(100, 3, TRUE),
+(100, 1, TRUE),
+(101, 2, FALSE),
+(101, 3, TRUE),
+(101, 1, FALSE),
+(102, 2, FALSE),
+(102, 3, TRUE),
+(102, 1, TRUE),
+(104, 2, TRUE),
+(104, 3, FALSE),
+(104, 1, FALSE),
+(105, 2, FALSE),
+(105, 3, TRUE),
+(105, 1, TRUE),
+(107, 2, TRUE),
+(107, 3, FALSE),
+(107, 1, TRUE),
+(108, 2, FALSE),
+(108, 3, TRUE),
+(108, 1, FALSE),
+(109, 2, TRUE),
+(109, 3, TRUE),
+(109, 1, FALSE);
+
+
 
 
 

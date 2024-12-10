@@ -6,7 +6,7 @@ from . import play_areas_bp
 # Route definitions for play_areas
 @play_areas_bp.route('/')
 def index():
-    return render_template('play_areas/index.html')
+    return render_template('index.html')
 
 #@play_areas_bp.route('/<int:id>')
 #def details(id):

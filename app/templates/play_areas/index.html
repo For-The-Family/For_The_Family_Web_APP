@@ -10,7 +10,7 @@
 <body>
     <nav class="grid rounded-full grid-cols-2 gap-50 w-99 my-10 mx-3">
         <button class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-3 rounded-full  shadow-2xl"
-            hx-get="/homePage"
+            hx-get="{{ url_for('front_page.index') }}"
             hx-target="#content-body"
             hx-swap="innerHTML">
             HomePage
@@ -34,7 +34,7 @@
             </button>
             <!--Vantar route fyrir að sínir rétta data-->
             <button class="bg-purple-500 hover:bg-purple-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
-                hx-get="\Leiksólar\index.html"
+                hx-get="{{ url_for('kindergartens.index') }}"
                 hx-target="#content-body"
                 hx-swap="innerHTML">
                 Leikskólar
