@@ -26,10 +26,10 @@ def get_all_kindergartens():
                       ARRAY_AGG(DISTINCT a.activity_name) AS activities,
                       ARRAY_AGG(DISTINCT f.facility_name) AS facilities
                FROM kindergartens k
-                JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
-                JOIN activities a ON ka.activity_id = a.id
-               JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
-               JOIN facilities f ON kf.facility_id = f.id
+                LEFT JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
+                LEFT JOIN activities a ON ka.activity_id = a.id
+               LEFT JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
+               LEFT JOIN facilities f ON kf.facility_id = f.id
                GROUP BY k.id"""
     try:
         # Connect to the database
@@ -51,10 +51,10 @@ def kindergarten_details(kindergarten_id):
                       ARRAY_AGG(DISTINCT a.activity_name) AS activities,
                       ARRAY_AGG(DISTINCT f.facility_name) AS facilities
                FROM kindergartens k
-                JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
-                JOIN activities a ON ka.activity_id = a.id
-               JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
-               JOIN facilities f ON kf.facility_id = f.id
+                LEFT JOIN kindergarten_activities ka ON k.id = ka.kindergarten_id
+                LEFT JOIN activities a ON ka.activity_id = a.id
+               LEFT JOIN kindergarten_facilities kf ON k.id = kf.kindergarten_id
+               LEFT JOIN facilities f ON kf.facility_id = f.id
                WHERE k.id = %s
                GROUP BY k.id"""
     try:

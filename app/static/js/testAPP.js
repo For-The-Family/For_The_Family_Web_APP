@@ -231,6 +231,8 @@ async function createfacilitiesCheckboxes() {
 
 // 8:30 started compining the code
 
+// 9
+
 const openCloesup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
     
 
