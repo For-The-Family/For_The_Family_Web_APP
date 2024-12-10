@@ -2,7 +2,6 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
         <title>play_Areas Home</title>
         <script src="https://unpkg.com/htmx.org@1.8.4"></script>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -74,60 +73,44 @@
                 hx-swap="innerHTML">
                     Grunnskólar
                 </button>
-                <div class="grid grid-cols-3 gap-4 p-4">
-                    <div>
-                        <button 
-                            type="button" 
-                            class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
-                            >Bæjarfelag Filters</button>
-                        <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="city-filters">
-                            <!-- Content for city filters goes here -->
-                            <p>City Filter Content</p>
-                        </div>
-                    </div>
-                
-                    <div>
-                        <button 
-                            type="button" 
-                            class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
-                            >Virkni Filters</button>
-                        <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="activity-filters">
-                            <!-- Content for activity filters goes here -->
-                            <p>Activity Filter Content</p>
-                        </div>
-                    </div>
-                
-                    <div>
-                        <button 
-                            type="button"
-                            class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
-                            >Aðstaða Filters</button>
-                        <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="facility-filters">
-                            <!-- Content for facility filters goes here -->
-                            <p>Facility Filter Content</p>
-                        </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 p-4">
+                <div>
+                    <button 
+                        type="button" 
+                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                        >Bæjarfelag Filters</button>
+                    <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="city-filters">
+                        <p>City Filter Content</p>
                     </div>
                 </div>
+            
+                <div>
+                    <button 
+                        type="button" 
+                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                        >Virkni Filters</button>
+                    <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="activity-filters">
+                        <p>Activity Filter Content</p>
+                    </div>
+                </div>
+            
+                <div>
+                    <button 
+                        type="button" 
+                        class="collapsible bg-yellow-500 hover:bg-yellow-700 text-black text-lg py-2 px-4 mb-2 rounded-full border-4 border-gray w-full"
+                        >Aðstaða Filters</button>
+                    <div class="content-col bg-gray-100 rounded-lg p-4 shadow-md" id="facility-filters">
+                        <p>Facility Filter Content</p>
+                    </div>
+                </div>
+            </div>
+
+            
     </header>
 
     <body>    
         <div id="root">
-            <button class="button open-button"></button>
-            <dialog open class="modal" id="modal">
-                <h2>
-                    Leiksvæði og veitingastaðir
-                   </h2>
-                   <h3>Findu það sem þig vantar..</h3>
-                   <h3>Núna!</h3>
-                   <p>Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
-                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
-                    eina sem þú gerir á okkar síðu
-                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.</p>
-            
-                    <p>Fyrir fram þakkir ♡ </p>
-            
-                    <button class="button close-button">OK</button>
-                </dialog>
             <div id="content"></div>
             <p id="message"></p>
             <p id="loading"></p>
@@ -137,7 +120,22 @@
         <section id="item-closeup" class="closeup hidden"></section>
         <div id="map" class="map-container hidden"></div>
 
-
+        <button class="button open-button"></button>
+        <dialog open class="modal" id="modal">
+            <h2>
+                Leiksvæði og veitingastaðir
+               </h2>
+               <h3>Findu það sem þig vantar..</h3>
+               <h3>Núna!</h3>
+               <p>Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                eina sem þú gerir á okkar síðu
+                sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.</p>
+        
+                <p>Fyrir fram þakkir ♡ </p>
+        
+                <button class="button close-button">OK</button>
+            </dialog>
         
     </body>
 

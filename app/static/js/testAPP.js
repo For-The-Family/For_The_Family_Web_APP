@@ -106,8 +106,22 @@ const getItems = async () => {
 };
 
 function createButtons() {
+    const sortButtonContainer = document.createElement('div');
+    sortButtonContainer.classList.add('grid', 'grid-cols-2', 'gap-4', 'p-4', 'mt-4');
+
     const sortByNameButton = document.createElement('button');
-    sortByNameButton.innerText = 'Sort by name';
+    sortByNameButton.innerText = 'Raða eftir nafni';
+    sortByNameButton.classList.add(
+        'bg-blue-500',
+        'hover:bg-blue-700',
+        'text-white',
+        'text-lg',
+        'font-bold',
+        'py-2',
+        'px-4',
+        'rounded-full',
+        'shadow-md'
+    );
     sortByNameButton.addEventListener('click', () => {
         sortingAB = true;
         sortingGIO = false;
@@ -115,16 +129,30 @@ function createButtons() {
     });
 
     const sortByGeolocationButton = document.createElement('button');
-    sortByGeolocationButton.innerText = 'Sort by Geolocation';
+    sortByGeolocationButton.innerText = 'Raða eftir Geolocation';
+    sortByGeolocationButton.classList.add(
+        'bg-green-500',
+        'hover:bg-green-700',
+        'text-white',
+        'text-lg',
+        'font-bold',
+        'py-2',
+        'px-4',
+        'rounded-full',
+        'shadow-md'
+    );
     sortByGeolocationButton.addEventListener('click', () => {
         sortingGIO = true;
         sortingAB = false;
-        getUserLocation()
+        getUserLocation();
         updateDisplay();
     });
 
-    root.appendChild(sortByNameButton);
-    root.appendChild(sortByGeolocationButton);
+    sortButtonContainer.appendChild(sortByNameButton);
+    sortButtonContainer.appendChild(sortByGeolocationButton);
+
+    const filterContainer = document.querySelector('.grid.grid-cols-3.gap-4.p-4');
+    filterContainer.insertAdjacentElement('afterend', sortButtonContainer);
 }
 
 async function createcityCheckboxes() {
@@ -161,7 +189,6 @@ async function createcityCheckboxes() {
 async function createActivityCheckboxes() {
     const items = await getItems();
     
-    // Collect unique activity names
     const uniqueActivities = new Set();
     items.forEach(item => {
         item.activities.forEach(activity => {
@@ -171,7 +198,6 @@ async function createActivityCheckboxes() {
 
     const activityContainer = document.getElementById("activity-filters");
 
-    // Create checkboxes for each unique activity name
     uniqueActivities.forEach(activityName => {
         console.log(`Activity: ${activityName}`);
 
@@ -247,7 +273,7 @@ async function createfacilitiesCheckboxes() {
 const opencloseup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
     console.log('Activities (raw):', activities);
 
-    // Ensure activities is a string or an array before proceeding
+    
     const uniqueActivities = [...new Set(activities.split(', ').map(item => item.trim()))];
 
     const contentHTML = `
@@ -347,7 +373,7 @@ if (closecloseupBtn) {
         closecloseup();
     }
   });
-  //
+
 
 
 
@@ -359,7 +385,7 @@ const renderItems = (items) => {
                 <h3>${name}</h3>
                 <p><strong>Baearfelag:</strong> ${city}</p>
                 <p><strong>Opnunartímar:</strong> ${opening_hours}</p>
-                <img src="/static/${image_path}" alt="${name}" style="width: 200px; height: auto;">
+                <img src="/static/${image_path}" alt="${name}" style="width: auto; height: auto; display: block; margin: auto; border: 3px solid #0f2027;">
             </li>`;
         })
         .join('');
@@ -393,15 +419,15 @@ const updateDisplay = async () => {
             const matchesActivities = selectedActivities.every(activity => 
                 item.activities.some(a => a.name === activity && a.is_available)
             );            const selectedFacilities = facilitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
-            const matchesFacilities = selectedFacilities.every(facility => item.facilities.some(f => f === facility && f.is_available));
-            return matchesActivities && matchescity && matchesFacilities;
+            const matchesFacilities = selectedFacilities.every(facility => 
+                item.facilities.includes(facility)
+            );            return matchesActivities && matchescity && matchesFacilities;
         
         });
 
         const content = document.querySelector('#content');
         content.innerHTML = `<ul>${renderItems(sortedItems)}</ul>`;
 
-        //this is from old code
         const closeUpItems = document.querySelectorAll('.closeUp-item');
         closeUpItems.forEach((item) => {
             item.addEventListener('click', () => {

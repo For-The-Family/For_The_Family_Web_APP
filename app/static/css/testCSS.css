@@ -1,9 +1,10 @@
-/* stole this css which i think is fine? then used chatgpt for the sidebar since i don't remember the best way to use it...and i am lazy */
-
+/* Base Styles */
 
 
 #root {
   margin-left: 320px;
+  margin-right: 320px;
+
   width: calc(100% - 320px);
 }
 * {
@@ -11,7 +12,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 
 body {
   font-family: Arial, sans-serif;
@@ -80,10 +80,7 @@ li:hover {
   margin-top: 20px;
 }
 
-
-
-
-/* i hate css i spent so much time fixing AND USING CHATGPT to just have to move the hidden fucking above this!!!! AND I KNEW IT GOES FROM TOP TO BOTTOM I HATE THIS */
+/* Modal Styles */
 .modal {
   color: black;
   width: 450px;
@@ -108,11 +105,7 @@ li:hover {
   z-index: 2;
 }
 
-
-
-/* this is the overlay */
-
-
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -124,11 +117,10 @@ li:hover {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
   z-index: 1;
-  }
-  
-  
-  /* i hate css i spent so much time fixing AND USING CHATGPT to just have to move the hidden fucking above this!!!! AND I KNEW IT GOES FROM TOP TO BOTTOM I HATE THIS */
-  .closeup {
+}
+
+/* Closeup */
+.closeup {
   color: black;
   display: flex;
   flex-direction: column;
@@ -146,17 +138,80 @@ li:hover {
   z-index: 2;
   border: 1px solid #ddd;
   border-radius: 15px;
-  }
-  
-  .map-container {
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #root {
+    margin-left: 0;
+    margin-right: 0;
+
     width: 100%;
-    height: 300px;
-    margin-top: 20px;
-    position: relative;
-    z-index: 3;
   }
-  
-  .hidden {
-    display: none;
+
+  #content {
+    grid-template-columns: 1fr;
   }
-  
+
+  li {
+    padding: 15px;
+  }
+
+  li h3 {
+    font-size: 1.2em;
+  }
+
+  li p {
+    font-size: 0.9em;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .closeup {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  #content {
+    gap: 10px;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  li h3 {
+    font-size: 1em;
+  }
+
+  li p {
+    font-size: 0.8em;
+  }
+
+  .modal, .closeup {
+    width: 95%;
+    padding: 0.8rem;
+  }
+}
