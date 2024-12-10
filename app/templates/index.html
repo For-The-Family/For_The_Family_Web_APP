@@ -1,50 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}For the Family{% endblock %}</title>
-    <!-- Link to CSS stylesheet
+<html lang="en" style="background-color: rgb(238, 207, 164);">
 
-    Link to CSS stylesheet -->
-</head>
-    <!-- Header section -->
-    {% if show_header | default(true) %}
-        <header>
-            <div class="menu-container">
-                <menu class="menu">
-                    <li><a href="{{ url_for('front_page.home') }}">Home</a></li>
-                    <li><a href="{{ url_for('kindergartens_bp.index') }}">Kindergartens</a></li>
-                    <li><a href="{{ url_for('test_js.index') }}">Java Script Testing</a></li>
-                    <li><a href="{{ url_for('test_css.index') }}">CSS Testing</a></li>
-                    <li><a href="{{ url_for('test_sql.index') }}">SQL Testing</a></li>
-                </menu>
-
-                <ul class="right-links">
-                </ul>
-            </div>
-        </header>
-    {% endif %}
-<body>
-
-    <!-- Main content area -->
-    <main>
-        {% block content %}
-        <!-- This block will be filled with page-specific content -->
-        {% endblock content %}
-    </main>
-
-
-    <!-- Optional JavaScript -->
-    <!-- Optional JavaScript -->
-</body>
-    <!-- Footer section -->
-    {% if show_footer | default(true) %}
-        <footer class="footer">
-            <menu>
-
-            </menu>
-            <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
-        </footer>
-    {% endif %}
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Offside&family=Playpen+Sans:wght@100..800&display=swap"rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <title>Who Would Read This?, I would read this!</title>
+        <!--windtail-->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!--HTMLX-->
+        <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    </head>
+    
+    <header>
+        <div id="root">
+            <dialog id="modal" open class="bg-white rounded-full shadow-lg grid text-center mx-auto p-8 fixed inset-0 w-2/3 max-wl h-98 modal">
+                <div class="order-first">
+                    <h2 class="mb-5 mt-10 text-3xl font-bold">
+                        Leiksvæði og veitingastaðir
+                    </h2>
+                    <h3 class="mb-5 text-xl font-semibold text-white-100">
+                        Findu það sem þig vantar.. Núna!
+                    </h3>
+                    <p class="mb-4 text-black-700 leading-relaxed">
+                    Þessi síða hefur engann áhuga á þínum gögnum við söfnum engi og þurfum enginn gögn eða upplæysingar frá þér.
+                    Stillingar sem þú velur á síðunni okkar vistast einungis hjá þér, við hvorki sjáum né vitum eitthvað um þig.
+                    eina sem þú gerir á okkar síðu
+                    sem hefur áhrif er nafnlaus tilkynning um vandamál á völdum stað.+
+                    </p>
+                </div>
+                <div class="order-2">
+                    <p class="mb-4 text-black-700 leading-relaxed">Fyrir fram þakkir ♡ </p>
+                </div>
+                <div class="order-last mt-8">
+                    <button class="bg-green-500 hover:bg-green-700 font-bold py-2 px-6 rounded-full focus:outline-none focus:ring focus:ring-green-300 btn-close">
+                        OK
+                    </button>
+                </div>            
+                </dialog>
+            <div id="content"></div>
+            <p id="message"></p>
+            <p id="loading"></p>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay fixed inset-0 bg-black bg-opacity-50 hidden"></div>
+        
+        <h1 class="text-3xl font-bold underline text-center"> Hverju er verið að leita að... (^v^)/</h1>
+        
+        <div class="grid grid-cols-1 gap-10 w-full mt-10 ">
+            
+            <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
+            <button
+                class="bg-green-500 hover:bg-green-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                hx-get="\play_areas\index.html" 
+                hx-target="#content"
+                gx-swap="innerHTML">
+                Leiksvæði
+            </button>
+            <!--Vantar að láta route í hx-get: , gæti þurfa að fikta í hx.target.-->
+            <button
+                class="bg-red-500 hover:bg-red-700 text-white text-2xl font-bold py-10 px-9 rounded-full shadow-2xl"
+                hx-get="app/templates/test_css/veitingarstadir.html"
+                hx-target="#content"
+                gx-swap="innerHTML">
+                veitingastaðir
+            </button>
+        </div>
+    </header>
+ 
+    <body>    
+        <div id="root">
+            <div id="content"></div>
+        </div>
+    </body>
+    <footer class="ml-5 mt-4" >
+        <p><br>&copy; 2024 Asmodeus, Diljá, Örn - <a style="text-decoration:none" href="https://tskoli.is/">Tækniskólinn, Icelandic college of technology</a> - Web-programming-II</p>
+    </footer>
 </html>
+<script>
+    const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const closeModalBtn = document.querySelector(".btn-close");
+
+// close modal function
+const closeModal = function () {
+modal.classList.add("hidden");
+overlay.classList.add("hidden");
+};
+
+// close the modal when the close button and overlay is clicked
+closeModalBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+// close modal when the Esc key is pressed
+document.addEventListener("keydown", function (e) {
+if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+closeModal();
+}
+});
+</script>
