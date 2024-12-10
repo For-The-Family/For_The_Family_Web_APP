@@ -65,16 +65,12 @@ const customSortAB = (a, b) => {
 openModal.addEventListener('click', () => { 
     if (modal && typeof modal.showModal === 'function') {
         modal.showModal();
-    } else {
-        console.error('Modal element does not support showModal method');
     }
 });
 
 closeModal.addEventListener('click', () => {
     if (modal && typeof modal.close === 'function') {
         modal.close();
-    } else {
-        console.error('Modal element does not support close method');
     }
 });
 
@@ -92,14 +88,8 @@ const getItems = async () => {
     try {
         const response = await fetch('test_js/all');
         const data = await response.json();
-        data.forEach(kindergarten => {
-            console.log(`Kindergarten: ${kindergarten.name}`);
-            kindergarten.activities.forEach(activity => {
-                console.log(`Activity: ${activity.name}, Available: ${activity.is_available}`);
-            });
-        });        return data;
+return data;
     } catch (error) {
-        console.error('Failed to load data', error);
         document.querySelector('#message').innerText = 'Failed to load';
         return [];
     }
@@ -199,7 +189,6 @@ async function createActivityCheckboxes() {
     const activityContainer = document.getElementById("activity-filters");
 
     uniqueActivities.forEach(activityName => {
-        console.log(`Activity: ${activityName}`);
 
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -208,7 +197,9 @@ async function createActivityCheckboxes() {
 
         let label = document.createElement("label");
         label.htmlFor = activityName;
-        label.innerText = activityName;
+        if (activityName.trim() !== '') {
+            label.innerText = activityName;
+        }
 
         activityContainer.appendChild(checkbox);
         activityContainer.appendChild(label);
@@ -241,7 +232,9 @@ async function createfacilitiesCheckboxes() {
 
         let label = document.createElement("label");
         label.htmlFor = facility;
-        label.innerText = facility;
+        if (facility.trim() !== '') {
+            label.innerText = facility;
+        }
 
         facilityContainer.appendChild(checkbox);
         facilityContainer.appendChild(label);
@@ -270,8 +263,13 @@ async function createfacilitiesCheckboxes() {
 
 // 10:20 am The others have left me i am still working
 
+// 11:50 am I am going dowm to the others to see if they are ready
+
+// 12:10 pm I am back to work!
+
+// 12:40 pm class started
+
 const opencloseup = (name, city, openingHours, minAge, activities, facilities, street_address) => {
-    console.log('Activities (raw):', activities);
 
     
     const uniqueActivities = [...new Set(activities.split(', ').map(item => item.trim()))];
@@ -283,7 +281,7 @@ const opencloseup = (name, city, openingHours, minAge, activities, facilities, s
         <p><strong>Lágmarksaldur:</strong> ${minAge}</p>
         <p><strong>Götuheiti:</strong> ${street_address}</p>
         <p><strong>Virkni:</strong> ${uniqueActivities.join(', ') || 'Engin virkni í boði'}</p>
-        <p><strong>Aðstaða:</strong> ${facilities || 'Engin aðstaða í boði'}</p>
+        <p><strong>Aðstaða:</strong> ${facilities || 'Food & Drinks, Parking, Toilets'}</p>
         <div id="map" class="map-container"></div>
     `;
 
@@ -306,7 +304,6 @@ const opencloseup = (name, city, openingHours, minAge, activities, facilities, s
 
 
 // THIS FEELS LIKE SPAGHETTI CODE BUT IT WORKS JUST BUY YOUR OWN MAP
-    console.log(street_address);
     fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(street_address)}`)
         .then(response => response.json())
         .then(data => {
@@ -321,8 +318,6 @@ const opencloseup = (name, city, openingHours, minAge, activities, facilities, s
                             .bindPopup("Þú ert hér")
                             .openPopup();
                     }
-                    console.log(lat, lon);
-                    console.log(userCoordinates);
                     const distance = getDistanceFromUser(lat, lon).toFixed(2) + ' km'
                     const distanceElement = document.createElement('p');
                     if (distance === 'Infinity km') {
@@ -393,23 +388,18 @@ const renderItems = (items) => {
 
 const updateDisplay = async () => {
     const items = await getItems();
-    console.log(items);
     if (items && items.length > 0) {
         const selectedActivities = activitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
         const selectedCities = CitiesCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
 
         let sortedItems = items;
-        console.log("BEFORE THE THINGY",userCoordinates);
         if (sortingAB) {
             const sortedItems = items.sort(customSortAB);
-            console.log(sortedItems);
         } else if (sortingGIO && userCoordinates) {
-            console.log("START SORTING GIO")
             sortedItems = sortedItems.filter(item => item.latitude && item.longitude)
             .sort((a, b) => {
                 const distanceA = getDistanceFromUser(a.latitude, a.longitude);
                 const distanceB = getDistanceFromUser(b.latitude, b.longitude);
-                console.log('Distances:', distanceA, distanceB);
                 return distanceA - distanceB;
             });
         }
@@ -438,19 +428,15 @@ const updateDisplay = async () => {
                 const activities = item.dataset.activities;
                 const facilities = item.dataset.facilities;
                 const street_address = item.dataset.streetAddress;
-                console.log(street_address);
-                console.log(item);
+
         
                 opencloseup(name, city, openingHours, minAge, activities, facilities, street_address);
             });
         });
-    } else {
-        console.error('No items to display');
     }
 };
 
 const getUserLocation = () => {
-    console.log("test");
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -458,7 +444,6 @@ const getUserLocation = () => {
                     latitude: position.coords.latitude,
                 longitude: position.coords.longitude
                 };
-                console.log(userCoordinates);
             },
         );
     }
@@ -470,7 +455,6 @@ const getUserLocation = () => {
 
 const getDistanceFromUser = (lat2, lon2) => {
     if (!userCoordinates || lat2 === undefined || lon2 === undefined) {
-        console.warn('STUCK FUCLKING IF SEE THIS MEANS CANT SEE THE OBJECTS CORDS OR USERS', { userCoordinates, lat2, lon2 });
         sortingAB = true
         sortingGIO = false
         return Infinity;
@@ -481,7 +465,6 @@ const getDistanceFromUser = (lat2, lon2) => {
 
 
     if (lat1 === undefined || lon1 === undefined || lat2 === undefined || lon2 === undefined) {
-        console.warn('One of the coordinates is undefined:', { lat1, lon1, lat2, lon2 });
         return Infinity;
     }
 
@@ -496,7 +479,6 @@ const getDistanceFromUser = (lat2, lon2) => {
         Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
-    console.log(`Distance from user to target: ${distance} km`);
     return distance;
 };
 

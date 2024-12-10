@@ -14,12 +14,10 @@ def get_db_connection():
     )
     return conn
 
-# Route to render the index page
 @test_js_bp.route('/')
 def index():
     return render_template('test_js/index.html')
 
-# Route to handle search queries
 @test_js_bp.route('test_js/all', methods=['GET'])
 def get_all_kindergartens():
     query = """SELECT k.*, 
@@ -35,9 +33,8 @@ def get_all_kindergartens():
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 cur.execute(query)
-                columns = [desc[0] for desc in cur.description]  # Fetch column names
+                columns = [desc[0] for desc in cur.description]
                 results = cur.fetchall()
-                # Format the results into a list of dictionaries
                 response = [dict(zip(columns, row)) for row in results]
         return jsonify(response)
     except Exception as e:
@@ -54,13 +51,12 @@ def kindergarten_details(kindergarten_id):
                WHERE k.id = %s
                GROUP BY k.id, k.name, k.city, k.street_address, k.postal_code, k.opening_hours, k.minimum_age, k.image_path"""
     try:
-        # Connect to the database
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 cur.execute(query, (kindergarten_id,))
                 row = cur.fetchone()
                 if row:
-                    columns = [desc[0] for desc in cur.description]  # Fetch column names
+                    columns = [desc[0] for desc in cur.description]
                     response = dict(zip(columns, row))
                     return jsonify(response)
                 else:
