@@ -43,6 +43,8 @@
   * SQL-server var notaður til þess að hýsa upplýsingar í gegnum PostGRES
   * hér fyrir neðan má sjá mynd af sambands tenginum í gagnasafninu.
 
+
+<img src="./Images/SQL_table_relations.png">
 <img src="./Images/TableRelationship.png">
 
 # Source Material
