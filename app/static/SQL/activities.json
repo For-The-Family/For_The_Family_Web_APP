@@ -1,0 +1,1277 @@
+[
+  {
+    "kindergarten_id": 1,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 1,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 1,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 2,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 2,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 2,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 3,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 3,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 3,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 4,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 4,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 4,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 5,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 5,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 5,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 6,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 6,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 6,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 7,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 7,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 7,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 8,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 8,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 8,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 9,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 9,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 9,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 10,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 10,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 10,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 11,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 11,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 11,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 12,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 12,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 12,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 13,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 13,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 13,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 14,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 14,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 14,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 15,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 15,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 15,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 16,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 16,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 16,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 17,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 17,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 17,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 18,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 18,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 18,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 19,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 19,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 19,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 20,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 20,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 20,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 21,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 21,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 21,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 22,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 22,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 22,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 23,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 23,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 23,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 24,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 24,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 24,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 25,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 25,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 25,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 26,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 26,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 26,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 27,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 27,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 27,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 28,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 28,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 28,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 29,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 29,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 29,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 30,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 30,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 30,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 31,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 31,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 31,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 32,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 32,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 32,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 33,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 33,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 33,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 34,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 34,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 34,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 35,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 35,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 35,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 36,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 36,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 36,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 37,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 37,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 37,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 38,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 38,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 38,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 39,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 39,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 39,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 40,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 40,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 40,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 41,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 41,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 41,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 42,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 42,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 42,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 43,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 43,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 43,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 44,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 44,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 44,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 45,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 45,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 45,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 46,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 46,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 46,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 47,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 47,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 47,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 48,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 48,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 48,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 49,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 49,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 49,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 50,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 50,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 50,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 51,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 51,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 51,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 52,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 52,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 52,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 53,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 53,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 53,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 54,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 54,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 54,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 55,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 55,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 55,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 56,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 56,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 56,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 57,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 57,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 57,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 58,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 58,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 58,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 59,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 59,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 59,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 60,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 60,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 60,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 61,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 61,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 61,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 62,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 62,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 62,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 63,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 63,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 63,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 64,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 64,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 64,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 65,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 65,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 65,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 66,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 66,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 66,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 67,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 67,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 67,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 68,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 68,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 68,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 69,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 69,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 69,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 70,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 70,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 70,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 71,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 71,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 71,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 72,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 72,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 72,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 73,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 73,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 73,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 74,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 74,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 74,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 75,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 75,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 75,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 76,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 76,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 76,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 77,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 77,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 77,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 78,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 78,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 78,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 79,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 79,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 79,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 80,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 80,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 80,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 81,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 81,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 81,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 82,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 82,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 82,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 83,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 83,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 83,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 84,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 84,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 84,
+    "facility_id": 1,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 85,
+    "facility_id": 2,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 85,
+    "facility_id": 3,
+    "is_available": true
+  },
+  {
+    "kindergarten_id": 85,
+    "facility_id": 1,
+    "is_available": true
+  }
+]

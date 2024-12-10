@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "facility_name": "Food & Drinks"
+  },
+  {
+    "id": 2,
+    "facility_name": "Parking"
+  },
+  {
+    "id": 3,
+    "facility_name": "Toilets"
+  }
+]

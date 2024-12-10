@@ -63,18 +63,24 @@ const customSortAB = (a, b) => {
 openModal.addEventListener('click', () => { 
     if (modal && typeof modal.showModal === 'function') {
         modal.showModal();
+        console.log("test openModal")
     } else {
         console.error('Modal element does not support showModal method');
     }
 });
 
+
 closeModal.addEventListener('click', () => {
     if (modal && typeof modal.close === 'function') {
         modal.close();
+        console.log("test closeModal")
     } else {
         console.error('Modal element does not support close method');
     }
 });
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
